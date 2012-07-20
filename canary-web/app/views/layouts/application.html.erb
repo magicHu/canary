@@ -62,7 +62,12 @@
         </div>
       </div>
     </div>
-
+  
+    <!-- Javascripts
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <%= javascript_include_tag "application" %>
+    
     <div class="container">
     		<% if flash[:notice] || flash[:alert] %>
     			<div class="alert">
@@ -72,22 +77,7 @@
     		<% end %>
     		
       <div class="content">
-        <div class="row">
-           <div class="span9">
-              <%= yield %>
-            </div>
-            <div class="span3">
-              <div class="well sidebar-nav">
-                <h3>Sidebar</h3>
-                <ul class="nav nav-list">
-                  <li class="nav-header">Sidebar</li>
-                  <li><%= link_to "Link1", "/path1"  %></li>
-                  <li><%= link_to "Link2", "/path2"  %></li>
-                  <li><%= link_to "Link3", "/path3"  %></li>
-                </ul>
-              </div><!--/.well -->
-            </div><!--/span-->
-        </div><!--/row-->
+        <%= yield %>
       </div><!--/content-->
 
       <footer>
@@ -95,11 +85,6 @@
       </footer>
 
     </div> <!-- /container -->
-
-    <!-- Javascripts
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <%= javascript_include_tag "application" %>
 
   </body>
 </html>

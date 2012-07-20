@@ -1,2 +1,26 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<div class="row">
+	<div class="span5">
+		<div id="myCarousel" class="carousel slide">
+		    <div class="carousel-inner">
+		    		<%  (1..7).each do |index| %>
+		      <div class="item">
+		        <%= image_tag("carousel/#{index}.jpg") %>
+		        <div class="carousel-caption">
+		          <h4>居家旅游圣地</h4>
+		          <p><a href="#">详情</a></p>
+		        </div>
+		      </div>
+		      <% end %>
+		    </div>
+		    
+		    <a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
+		    <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	$(function() {
+		$('.carousel .item:first').addClass('active');
+	});
+	
+</script>
