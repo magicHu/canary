@@ -1,20 +1,10 @@
-<%= form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => { :class=>"form-horizontal" }) do |f| %>
+<%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => { :class=>"form-horizontal" }) do |f| %>
 	<fieldset>
 		<legend>登录</legend>
 		
-		  <div class="control-group">
-		  	<%= f.label :email, :class => 'control-label' %>
-	  		<div class="controls">
-			  	<%= f.email_field :email %>
-	  		</div>
-		  </div>
-		
-			<div class="control-group">
-		  	<%= f.label :password, :class => 'control-label' %>
-	  		<div class="controls">
-				  <%= f.password_field :password %>
-	  		</div>
-		  </div>
+		  <%= f.input :email %>
+		  
+		  <%= f.input :password %>
 		
 		  <% if devise_mapping.rememberable? -%>
 		  		<div class="controls">
@@ -25,10 +15,9 @@
 		    </div>
 		  <% end -%>
 		
-		  <div class="controls">
-		  		<%= f.submit "登录",  :class => 'btn btn-primary btn-large' %>
-					<%= render "devise/shared/links" %>
-		  </div>
+			<%= f.button :submit %>
+			<%= render "devise/shared/links" %>
+
 	</fieldset>
 <% end %>
 
