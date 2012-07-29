@@ -8,7 +8,7 @@ development:
   password: root
   host: localhost
 
-test:
+test: &test
   adapter: mysql2
   encoding: utf8
   reconnect: false
@@ -27,3 +27,5 @@ production:
   username: root
   password: root
   host: localhost
+cucumber:
+  <<: *test
