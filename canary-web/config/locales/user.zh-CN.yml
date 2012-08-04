@@ -1,0 +1,13 @@
+zh-CN:
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              blank: Email不能为空
+            phone:
+              blank: 手机号不能为空
+              wrong_length: 手机号长度不对
+            password:
+              blank: 密码不能为空

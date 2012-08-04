@@ -6,12 +6,14 @@
 	  <%= devise_error_messages! %>
 		
 		<%= f.input :email %>
+		
+		<%= f.input :phone %>
 
 		<%= f.input :password %>
 		
 		<%= f.input :password_confirmation %>
 
-		<%= f.button :submit %>
+		<%= f.button :submit, "注册" %>
 		
 		<%= render "devise/shared/links" %>
   

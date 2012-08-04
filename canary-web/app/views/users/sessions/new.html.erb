@@ -2,7 +2,7 @@
 	<fieldset>
 		<legend>登录</legend>
 		
-		  <%= f.input :email %>
+		  <%= f.input :login %>
 		  
 		  <%= f.input :password %>
 		
@@ -15,7 +15,7 @@
 		    </div>
 		  <% end -%>
 		
-			<%= f.button :submit %>
+			<%= f.button :submit, "登录" %>
 			<%= render "devise/shared/links" %>
 
 	</fieldset>
