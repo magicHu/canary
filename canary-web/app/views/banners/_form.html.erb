@@ -1,0 +1,21 @@
+<%= simple_form_for(@banner, :html => { :class=>"form-horizontal", :multipart => true }) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :title %>
+    <%= f.input :desc %>
+    <%= f.input :link %>
+    <%= f.input :link_text %>
+    <%= f.input :is_open %>
+    <%= f.input :start_date %>
+    <%= f.input :stop_date %>
+    
+    <div class="controls">
+				<%= file_field_tag :attachment %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "提交", :class => 'btn btn-primary' %>
+  </div>
+<% end %>

@@ -1,0 +1,37 @@
+<h3 class="page-header">广告位管理<%= link_to '新建', new_banner_path, :class => ' btn btn-primary' %></h3>
+
+<table class="table">
+  <thead>
+    <th>Title</th>
+    <th>Desc</th>
+    <th>Link</th>
+    <th>Link text</th>
+    <th>Is open</th>
+    <th>Start date</th>
+    <th>Stop date</th>
+    <th></th>
+    <th></th>
+  </thead>
+
+<% @banners.each do |banner| %>
+  <tr>
+    <td><%= banner.title %></td>
+    <td><%= banner.desc %></td>
+    <td><%= banner.link %></td>
+    <td><%= banner.link_text %></td>
+    <td><%= banner.is_open %></td>
+    <td><%= banner.start_date %></td>
+    <td><%= banner.stop_date %></td>
+    	<td>
+    		<%= image_tag banner.attachment.attach.thumb if banner.attachment %>
+    	</td>
+    <td>
+    		<a href="<%= up_banner_path(banner) %>" class="btn"><i class="icon-arrow-up"></i></a>
+    		<a href="<%= down_banner_path(banner) %>" class="btn"><i class="icon-arrow-down"></i></a>
+    		<%= link_to '编辑', edit_banner_path(banner) %>
+    		<%= link_to '删除', banner, method: :delete, data: { confirm: 'Are you sure?' } %>
+    	</td>
+  </tr>
+<% end %>
+</table>
+

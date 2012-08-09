@@ -11,7 +11,31 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120804135833) do
+ActiveRecord::Schema.define(:version => 20120809145107) do
+
+  create_table "attachments", :force => true do |t|
+    t.string   "file_name"
+    t.string   "content_type"
+    t.integer  "file_size"
+    t.string   "attachmentable_type"
+    t.integer  "attachmentable_id"
+    t.string   "attach"
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
+  end
+
+  create_table "banners", :force => true do |t|
+    t.string   "title"
+    t.string   "desc"
+    t.string   "link"
+    t.string   "link_text"
+    t.boolean  "is_open"
+    t.date     "start_date"
+    t.date     "stop_date"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.integer  "position"
+  end
 
   create_table "posts", :force => true do |t|
     t.string   "title"

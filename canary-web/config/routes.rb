@@ -1,4 +1,9 @@
 CanaryWeb::Application.routes.draw do
+  resources :banners do
+    match 'up', :on => :member
+    match 'down', :on => :member
+  end
+
   devise_for :users
 
   get "home/index"

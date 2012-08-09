@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @banner.title %>
+</p>
+
+<p>
+  <b>Desc:</b>
+  <%= @banner.desc %>
+</p>
+
+<p>
+  <b>Link:</b>
+  <%= @banner.link %>
+</p>
+
+<p>
+  <b>Link text:</b>
+  <%= @banner.link_text %>
+</p>
+
+<p>
+  <b>Is open:</b>
+  <%= @banner.is_open %>
+</p>
+
+<p>
+  <b>Start date:</b>
+  <%= @banner.start_date %>
+</p>
+
+<p>
+  <b>Stop date:</b>
+  <%= @banner.stop_date %>
+</p>
+
+
+<%= link_to 'Edit', edit_banner_path(@banner) %> |
+<%= link_to 'Back', banners_path %>
