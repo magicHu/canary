@@ -16,6 +16,9 @@ gem 'simple_form'
 gem "devise", "~> 2.1.2"
 #gem 'omniauth'
 
+# Authorization
+gem 'cancan', "~> 1.6.8"
+
 # 分页
 gem "kaminari", "~> 0.13.0"
 
