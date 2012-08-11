@@ -24,5 +24,43 @@ class Ability
     #   can :update, Article, :published => true
     #
     # See the wiki for details: https://github.com/ryanb/cancan/wiki/Defining-Abilities
+    
+    user ||= User.new
+    
+    if user.has_role? :user
+      user_ability
+    elsif user.has_role? :admin
+      admin_ability
+    elsif user.has_role? :super_admin
+      super_admin_ability
+    else
+      guest_ability
+    end
+    
   end
+  
+  #+++++++++++++++++++++++++++++define all roles ability++++++++++++++++++++++
+  def guest_ability
+    
+  end
+  
+  # user ability
+  def user_ability
+    
+  end
+  
+  # admin ability
+  def admin_ability
+    user_ability
+    
+    can :manage, [Banner, Attachment]
+  end
+  
+  # super_admin ability
+  def super_admin_ability
+    admin_ability
+    
+    can :manage, :all
+  end
+  
 end

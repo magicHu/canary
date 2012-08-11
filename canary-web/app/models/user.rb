@@ -12,6 +12,9 @@ class User < ActiveRecord::Base
   # Virtual attribute for authenticating by either phone or email
   attr_accessor :login
 
+  # many-to-many roles
+  has_and_belongs_to_many :roles
+
   validates :phone, presence: true, length: { is: 11 }
  
   # override devise method: find_first_by_auth_conditions for login can user phone or email
@@ -23,4 +26,10 @@ class User < ActiveRecord::Base
       where(conditions).first
     end
   end
+  
+  # example ---> has_role? :admin
+  def has_role?(role_name_sym)
+    roles.any? { |role| role.name.underscore_to_sym == role_name_sym }
+  end
+
 end

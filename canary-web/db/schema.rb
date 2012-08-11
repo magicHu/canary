@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120809145107) do
+ActiveRecord::Schema.define(:version => 20120811055127) do
 
   create_table "attachments", :force => true do |t|
     t.string   "file_name"
@@ -37,12 +37,20 @@ ActiveRecord::Schema.define(:version => 20120809145107) do
     t.integer  "position"
   end
 
-  create_table "posts", :force => true do |t|
-    t.string   "title"
-    t.text     "body"
+  create_table "roles", :force => true do |t|
+    t.string   "name"
+    t.string   "desc"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  create_table "roles_users", :force => true do |t|
+    t.integer "role_id"
+    t.integer "user_id"
+  end
+
+  add_index "roles_users", ["user_id", "role_id"], :name => "index_roles_users_on_user_id_and_role_id", :unique => true
+  add_index "roles_users", ["user_id"], :name => "index_roles_users_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
