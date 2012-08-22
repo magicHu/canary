@@ -7,7 +7,7 @@ gem 'jquery-rails'
 gem 'mysql2'
 
 # Bootstrap
-gem "twitter-bootstrap-rails"
+gem "twitter-bootstrap-rails", "~> 2.1.1"
 
 # 表单
 gem 'simple_form'
