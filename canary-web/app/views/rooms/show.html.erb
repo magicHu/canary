@@ -1,0 +1,34 @@
+
+<p>
+  <b>Name:</b>
+  <%= @room.name %>
+</p>
+
+<p>
+  <b>Address:</b>
+  <%= @room.address %>
+</p>
+
+<p>
+  <b>Desc:</b>
+  <%= @room.desc %>
+</p>
+
+<p>
+  <b>Total:</b>
+  <%= @room.total %>
+</p>
+
+<p>
+  <b>Price:</b>
+  <%= @room.price %>
+</p>
+
+<p>
+  <% @room.attachments do |attachment| %>
+    <%= image_tag attachment.attach %>
+  <% end %>
+</p>
+
+<%= link_to 'Edit', edit_room_path(@room) %> |
+<%= link_to 'Back', rooms_path %>

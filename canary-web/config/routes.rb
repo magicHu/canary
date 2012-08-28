@@ -1,4 +1,8 @@
 CanaryWeb::Application.routes.draw do
+  resources :room_resources
+
+  resources :rooms
+
   resources :banners do
     match 'up', :on => :member
     match 'down', :on => :member
