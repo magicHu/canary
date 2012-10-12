@@ -1,18 +1,22 @@
 development:
-  adapter: postgresql
-  encoding: unicode
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
   database: canary_development
   pool: 5
-  username: postgres
-  password: postgres
+  username: root
+  password: root
+  host: localhost
 
 test: &test
-  adapter: postgresql
-  encoding: unicode
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
   database: canary_test
   pool: 5
-  username: postgres
-  password: postgres
+  username: root
+  password: root
+  host: localhost
 
 production:
   adapter: postgresql
