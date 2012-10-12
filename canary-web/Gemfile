@@ -4,7 +4,8 @@ source 'http://ruby.taobao.org'
 
 gem 'rails', '3.2.6'
 gem 'jquery-rails'
-gem 'mysql2'
+# gem 'mysql2'
+gem 'pg'
 
 # Bootstrap
 gem "twitter-bootstrap-rails", "~> 2.1.1"
