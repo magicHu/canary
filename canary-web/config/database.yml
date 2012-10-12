@@ -1,31 +1,25 @@
 development:
-  adapter: mysql2
-  encoding: utf8
-  reconnect: false
+  adapter: postgresql
+  encoding: unicode
   database: canary_development
   pool: 5
-  username: root
-  password: root
-  host: localhost
+  username: postgres
+  password: postgres
 
 test: &test
-  adapter: mysql2
-  encoding: utf8
-  reconnect: false
+  adapter: postgresql
+  encoding: unicode
   database: canary_test
   pool: 5
-  username: root
-  password: root
-  host: localhost
+  username: postgres
+  password: postgres
 
 production:
-  adapter: mysql2
-  encoding: utf8
-  reconnect: false
+  adapter: postgresql
+  encoding: unicode
   database: canary_production
   pool: 5
-  username: root
-  password: root
-  host: localhost
+  username: postgres
+  password: postgres
 cucumber:
   <<: *test
