@@ -1,4 +1,4 @@
-class BannersController < ApplicationController
+class Admin::BannersController < ApplicationController
   # GET /banners
   # GET /banners.json
   def index

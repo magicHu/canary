@@ -8,6 +8,7 @@ gem 'mysql2'
 gem 'pg'
 
 # Bootstrap
+gem "less-rails"
 gem "twitter-bootstrap-rails", "~> 2.1.1"
 
 # 表单
