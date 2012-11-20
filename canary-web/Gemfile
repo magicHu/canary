@@ -32,6 +32,9 @@ gem "mime-types", "~> 1.19"
 # 排序
 gem 'acts_as_list'
 
+# State Machine
+gem 'aasm'
+
 # 图表
 #gem 'lazy_high_charts'
 

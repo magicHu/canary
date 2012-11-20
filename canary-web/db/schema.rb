@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120826085949) do
+ActiveRecord::Schema.define(:version => 20121120123743) do
 
   create_table "attachments", :force => true do |t|
     t.string   "file_name"
@@ -29,12 +29,12 @@ ActiveRecord::Schema.define(:version => 20120826085949) do
     t.string   "desc"
     t.string   "link"
     t.string   "link_text"
-    t.boolean  "is_open"
     t.date     "start_date"
     t.date     "stop_date"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.integer  "position"
+    t.string   "state"
   end
 
   create_table "roles", :force => true do |t|
