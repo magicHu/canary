@@ -1,12 +1,12 @@
-<%= simple_form_for admin_rooms_path(@room), :html => { :class => 'form-horizontal' } do |f| %>
+<%= simple_form_for @room, :html => { :class => 'form-horizontal' } do |f| %>
   <%= f.input :name %>
   <%= f.input :address %>
-  <%= f.input :desc %>
+  <%= f.input :desc, :as => :text %>
   <%= f.input :total %>
   <%= f.input :price %>
   <div class="form-actions">
     <%= f.button :submit, :class => 'btn-primary' %>
     <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                admin_rooms_path, :class => 'btn' %>
+                rooms_path, :class => 'btn' %>
   </div>
 <% end %>

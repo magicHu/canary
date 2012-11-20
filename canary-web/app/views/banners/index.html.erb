@@ -29,7 +29,7 @@
     		<a href="<%= up_banner_path(banner) %>" class="btn"><i class="icon-arrow-up"></i></a>
     		<a href="<%= down_banner_path(banner) %>" class="btn"><i class="icon-arrow-down"></i></a>
     		<%= link_to '编辑', edit_banner_path(banner) %>
-    		<%= link_to '删除', banner, method: :delete, data: { confirm: 'Are you sure?' } %>
+    		<%= link_to '删除', banner_path(banner), method: :delete, data: { confirm: 'Are you sure?' } %>
     	</td>
   </tr>
 <% end %>

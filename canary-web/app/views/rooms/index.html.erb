@@ -18,7 +18,7 @@
   <tbody>
     <% @rooms.each do |room| %>
       <tr>
-        <td><%= link_to room.id, admin_room_path(room) %></td>
+        <td><%= link_to room.id, room_path(room) %></td>
         <td><%= room.name %></td>
         <td><%= room.address %></td>
         <td><%= room.desc %></td>
@@ -27,9 +27,9 @@
         <td><%=l room.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_admin_room_path(room), :class => 'btn btn-mini' %>
+                      edit_room_path(room), :class => 'btn btn-mini' %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                      admin_room_path(room),
+                      room_path(room),
                       :method => :delete,
                       :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
                       :class => 'btn btn-mini btn-danger' %>
@@ -40,5 +40,5 @@
 </table>
 
 <%= link_to t('.new', :default => t("helpers.links.new")),
-            new_admin_room_path,
+            new_room_path,
             :class => 'btn btn-primary' %>

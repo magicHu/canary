@@ -1,16 +1,14 @@
 CanaryWeb::Application.routes.draw do
   
-  namespace :admin do
-    resources :room_resources
+  resources :room_resources
 
-    resources :rooms
+  resources :rooms
 
-    resources :banners do
-      match 'up', :on => :member
-      match 'down', :on => :member
-    end
+  resources :banners do
+    match 'up', :on => :member
+    match 'down', :on => :member
   end
-
+  
   devise_for :users
 
   get "home/index"

@@ -1,4 +1,4 @@
-class Admin::RoomResourcesController < ApplicationController
+class RoomResourcesController < ApplicationController
   # GET /room_resources
   # GET /room_resources.json
   def index
