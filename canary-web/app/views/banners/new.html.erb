@@ -1,5 +1,6 @@
-<h3 class="page-header">新广告位
-	<%= link_to '返回', banners_path, :class => 'pull-right' %>	
-</h3>
-
-<%= render 'form' %>
+<%- model_class = Banner -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => t('helpers.titles.new', :model => model_class.model_name.human,
+                                 :default => "New #{model_class.model_name.human}") %></h1>
+</div>
+<%= render :partial => 'form' %>

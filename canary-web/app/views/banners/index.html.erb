@@ -1,35 +1,44 @@
-<h3 class="page-header">广告位管理<%= link_to '新建', new_banner_path, :class => ' btn btn-primary' %></h3>
-
-<table class="table">
+<%- model_class = Banner -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+</div>
+<table class="table table-striped">
   <thead>
-    <th>Title</th>
-    <th>Desc</th>
-    <th>Link</th>
-    <th>Link text</th>
-    <th>Start date</th>
-    <th>Stop date</th>
-    <th></th>
-    <th></th>
+    <tr>
+      <th><%= model_class.human_attribute_name(:title) %></th>
+      <th><%= model_class.human_attribute_name(:desc) %></th>
+      <th><%= model_class.human_attribute_name(:link) %></th>
+      <th><%= model_class.human_attribute_name(:link_text) %></th>
+      <th><%= model_class.human_attribute_name(:state) %></th>
+      <th>Photo</th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
   </thead>
-
-<% @banners.each do |banner| %>
-  <tr>
-    <td><%= banner.title %></td>
-    <td><%= banner.desc %></td>
-    <td><%= banner.link %></td>
-    <td><%= banner.link_text %></td>
-    <td><%= banner.start_date %></td>
-    <td><%= banner.stop_date %></td>
-    	<td>
-    		<%= image_tag banner.attachment.attach.thumb if banner.attachment %>
-    	</td>
-    <td>
-    		<a href="<%= up_banner_path(banner) %>" class="btn"><i class="icon-arrow-up"></i></a>
-    		<a href="<%= down_banner_path(banner) %>" class="btn"><i class="icon-arrow-down"></i></a>
-    		<%= link_to '编辑', edit_banner_path(banner) %>
-    		<%= link_to '删除', banner_path(banner), method: :delete, data: { confirm: 'Are you sure?' } %>
-    	</td>
-  </tr>
-<% end %>
+  <tbody>
+    <% @banners.each do |banner| %>
+      <tr>
+        <td><%= link_to banner.title, banner_path(banner) %></td>
+        <td><%= banner.desc %></td>
+        <td><%= banner.link %></td>
+        <td><%= banner.link_text %></td>
+        <td><%= banner.state %></td>
+        <td>
+          <%= image_tag banner.attachment.attach.thumb if banner.attachment %>
+        </td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_banner_path(banner), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      banner_path(banner),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
 
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_banner_path,
+            :class => 'btn btn-primary' %>

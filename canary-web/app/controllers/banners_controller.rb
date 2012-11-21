@@ -44,7 +44,8 @@ class BannersController < ApplicationController
     
     respond_to do |format|
       if @banner.save
-        Attachment.create(:attach => params[:attachment], :attachmentable => @banner) if params[:attachment]
+        attachment = @banner.photo
+        Attachment.create(:attach => attachment, :attachmentable => @banner) if attachment
         format.html { redirect_to @banner, notice: 'Banner was successfully created.' }
         format.json { render json: @banner, status: :created, location: @banner }
       else

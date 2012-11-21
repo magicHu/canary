@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
   def index
-    @banners = Banner.all_public
+    @banners = Banner.all
   end
 end

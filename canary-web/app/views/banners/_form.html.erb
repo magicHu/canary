@@ -1,20 +1,16 @@
-<%= simple_form_for(@banner, :html => { :class=>"form-horizontal", :multipart => true }) do |f| %>
-  <%= f.error_notification %>
+<%= simple_form_for @banner, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :title %>
+  <%= f.input :desc, :as => :text, :input_html => { :rows => 6 } %>
+  <%= f.input :link %>
+  <%= f.input :link_text %>
+  <%= f.input :start_date %>
+  <%= f.input :stop_date %>
 
-  <div class="form-inputs">
-    <%= f.input :title %>
-    <%= f.input :desc %>
-    <%= f.input :link %>
-    <%= f.input :link_text %>
-    <%= f.input :start_date %>
-    <%= f.input :stop_date %>
-    
-    <div class="controls">
-				<%= file_field_tag :attachment %>
-    </div>
-  </div>
+  <%= f.input :photo, :as => :file %>
 
   <div class="form-actions">
-    <%= f.button :submit, "提交", :class => 'btn btn-primary' %>
+    <%= f.button :submit, :class => 'btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                banners_path, :class => 'btn' %>
   </div>
 <% end %>
