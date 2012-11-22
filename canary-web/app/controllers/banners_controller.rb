@@ -2,7 +2,8 @@ class BannersController < ApplicationController
   # GET /banners
   # GET /banners.json
   def index
-    @banners = Banner.all
+    @banners_onshelf = Banner.all_onshelf
+    @banners_offshelf = Banner.all_offshelf
 
     respond_to do |format|
       format.html # index.html.erb
@@ -100,6 +101,23 @@ class BannersController < ApplicationController
     
     respond_to do |format|
       format.html { redirect_to banners_url, notice: 'Banner position was successfully moved.' }
+    end
+  end
+
+  def on_shelf
+    @banner = Banner.find(params[:id])
+    @banner.onshelf if @banner.may_onshelf?
+
+    respond_to do |format|
+      format.html { redirect_to banners_url, notice: 'Banner #{@banner.title} was successfully onshelf.' }
+    end
+  end
+
+  def off_shelf
+    @banner.offshelf if @banner.may_offshelf?
+
+    respond_to do |format|
+      format.html { redirect_to banners_url, notice: 'Banner #{@banner.title} was successfully offshelf.' }
     end
   end
 end
