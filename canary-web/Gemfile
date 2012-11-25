@@ -35,6 +35,9 @@ gem 'acts_as_list'
 # State Machine
 gem 'aasm'
 
+# 禁用 assets 日志
+gem 'quiet_assets', "~> 1.0.1"
+
 # 图表
 #gem 'lazy_high_charts'
 

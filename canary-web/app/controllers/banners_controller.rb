@@ -90,7 +90,7 @@ class BannersController < ApplicationController
     @banner.move_higher
     
     respond_to do |format|
-      format.html { redirect_to banners_url, notice: 'Banner position was successfully moved.' }
+      format.html { redirect_to banners_url, notice: "Banner #{@banner.title} was successfully moved." }
     end
   end
   
@@ -100,24 +100,25 @@ class BannersController < ApplicationController
     @banner.move_lower
     
     respond_to do |format|
-      format.html { redirect_to banners_url, notice: 'Banner position was successfully moved.' }
+      format.html { redirect_to banners_url, notice: "Banner #{@banner.title} position was successfully moved." }
     end
   end
 
-  def on_shelf
+  def onshelf
     @banner = Banner.find(params[:id])
-    @banner.onshelf if @banner.may_onshelf?
+    @banner.on_shelf! if @banner.may_on_shelf?
 
     respond_to do |format|
-      format.html { redirect_to banners_url, notice: 'Banner #{@banner.title} was successfully onshelf.' }
+      format.html { redirect_to banners_url, notice: "Banner #{@banner.position} was successfully onshelf." }
     end
   end
 
-  def off_shelf
-    @banner.offshelf if @banner.may_offshelf?
+  def offshelf
+    @banner = Banner.find(params[:id])
+    @banner.off_shelf! if @banner.may_off_shelf?
 
     respond_to do |format|
-      format.html { redirect_to banners_url, notice: 'Banner #{@banner.title} was successfully offshelf.' }
+      format.html { redirect_to banners_url, notice: "Banner #{@banner.position} was successfully offshelf." }
     end
   end
 end

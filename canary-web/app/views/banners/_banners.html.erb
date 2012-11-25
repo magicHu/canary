@@ -23,13 +23,18 @@
           <%= image_tag banner.attachment.attach.thumb if banner.attachment %>
         </td>
         <td>
-          <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_banner_path(banner), :class => 'btn btn-mini' %>
-          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                      banner_path(banner),
-                      :method => :delete,
-                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                      :class => 'btn btn-mini btn-danger' %>
+          <% if banner.onshelf? %>
+            <%= button_to "Off Shelf", offshelf_banner_path(banner) %>
+          <% else %>
+            <%= button_to "On Shelf", onshelf_banner_path(banner)  %>
+            <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                        edit_banner_path(banner), :class => 'btn btn-mini' %>
+            <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                        banner_path(banner),
+                        :method => :delete,
+                        :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                        :class => 'btn btn-mini btn-danger' %>
+          <% end %>
         </td>
       </tr>
     <% end %>

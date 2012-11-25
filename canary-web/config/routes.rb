@@ -7,6 +7,8 @@ CanaryWeb::Application.routes.draw do
   resources :banners do
     match 'up', :on => :member
     match 'down', :on => :member
+    match 'onshelf', :on => :member
+    match 'offshelf', :on => :member
   end
   
   devise_for :users
