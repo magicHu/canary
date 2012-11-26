@@ -109,7 +109,7 @@ class BannersController < ApplicationController
     @banner.on_shelf! if @banner.may_on_shelf?
 
     respond_to do |format|
-      format.html { redirect_to banners_url, notice: "Banner #{@banner.position} was successfully onshelf." }
+      format.html { redirect_to banners_url, notice: "Banner #{@banner.title} was successfully onshelf." }
     end
   end
 
@@ -118,7 +118,7 @@ class BannersController < ApplicationController
     @banner.off_shelf! if @banner.may_off_shelf?
 
     respond_to do |format|
-      format.html { redirect_to banners_url, notice: "Banner #{@banner.position} was successfully offshelf." }
+      format.html { redirect_to banners_url, notice: "Banner #{@banner.title} was successfully offshelf." }
     end
   end
 end
