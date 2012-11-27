@@ -2,7 +2,7 @@ class Banner < ActiveRecord::Base
   attr_accessible :title, :desc, :state, :link, :link_text, :start_date, :stop_date, :photo, :position
   attr_accessor :photo
   
-  has_one :attachment, :as => :attachmentable
+  has_one :attachment, :as => :attachmentable, :dependent => :destroy
   
   validates :title, :desc, :link, :link_text, :presence => true
   validates :photo, :presence => true, :on => :create
