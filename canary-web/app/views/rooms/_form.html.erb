@@ -1,7 +1,7 @@
 <%= simple_form_for @room, :html => { :class => 'form-horizontal' } do |f| %>
   <%= f.input :name %>
   <%= f.input :address %>
-  <%= f.input :desc, :as => :text %>
+  <%= f.input :desc, :as => :text, :input_html => { :rows => 10, :class => 'input-large' } %>
   <%= f.input :total %>
   <%= f.input :price %>
   <div class="form-actions">

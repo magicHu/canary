@@ -25,6 +25,8 @@
         <td>
           <% if banner.onshelf? %>
             <%= button_to "Off Shelf", offshelf_banner_path(banner) %>
+            <a class="btn" href="<%= up_banner_path(banner) %>"><i class="icon-arrow-up"></i></a>
+            <a class="btn" href="<%= down_banner_path(banner) %>"><i class="icon-arrow-down"></i></a>
           <% else %>
             <%= button_to "On Shelf", onshelf_banner_path(banner)  %>
             <%= link_to t('.edit', :default => t("helpers.links.edit")),

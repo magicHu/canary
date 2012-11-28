@@ -7,10 +7,12 @@ CanaryWeb::Application.routes.draw do
   resources :rooms
 
   resources :banners do
-    match 'up', :on => :member
-    match 'down', :on => :member
-    match 'onshelf', :on => :member
-    match 'offshelf', :on => :member
+    member do
+      match 'up'
+      match 'down'
+      match 'onshelf'
+      match 'offshelf'
+    end
   end
   
   devise_for :users

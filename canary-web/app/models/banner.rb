@@ -2,7 +2,7 @@ class Banner < ActiveRecord::Base
   attr_accessible :title, :desc, :state, :link, :link_text, :start_date, :stop_date, :photo, :position
   attr_accessor :photo
   
-  has_one :attachment, :as => :attachmentable
+  has_one :attachment, :as => :attachmentable, :dependent => :destroy
   
   validates :title, :desc, :link, :link_text, :presence => true
   validates :photo, :presence => true, :on => :create
@@ -10,12 +10,12 @@ class Banner < ActiveRecord::Base
   acts_as_list
   default_scope :order => 'position'
   
-  def self.all_onshelf
-    where("state = 'onshelf'").includes(:attachment)
-  end
-
-  def self.all_offshelf
-    where("state = 'offshelf'").includes(:attachment)
+  class << self
+    ['onshelf', 'offshelf'].each do |state|
+      define_method "all_#{state}" do
+        where('state' => state).includes(:attachment)
+      end
+    end
   end
 
   def init_position_to_bottom
