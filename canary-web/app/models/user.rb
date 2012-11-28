@@ -14,6 +14,7 @@ class User < ActiveRecord::Base
 
   # many-to-many roles
   has_and_belongs_to_many :roles
+  has_many :orders
 
   validates :phone, presence: true, length: { is: 11 }
  
