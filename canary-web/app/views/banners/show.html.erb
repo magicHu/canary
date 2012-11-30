@@ -14,6 +14,8 @@
   <dd><%= @banner.link_text %></dd>
   <dt><strong><%= model_class.human_attribute_name(:state) %>:</strong></dt>
   <dd><%= @banner.state %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:photo) %></strong></dt>
+  <dd><%= image_tag @banner.attachment.attach.thumb if @banner.attachment %></dd>
 </dl>
 
 <div class="form-actions">
