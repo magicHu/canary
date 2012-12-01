@@ -23,8 +23,8 @@
     <% @orders.each do |order| %>
       <tr>
         <td><%= link_to "订单详情", order_path(order) %></td>
-        <td><%= order.user_mail %></td>
-        <td><%= link_to order.room_desc, room_path(order.room) %></td>
+        <td><%= order.user_email %></td>
+        <td><%= link_to order.room_desc, room_path(order.room) if order.room %></td>
         <td><%= order.room_num %></td>
         <td><%= order.order_name %></td>
         <td><%= order.order_phone %></td>
