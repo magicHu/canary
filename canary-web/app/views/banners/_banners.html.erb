@@ -20,7 +20,7 @@
         <td><%= banner.link_text %></td>
         <td><%= banner.state %></td>
         <td>
-          <%= image_tag banner.attachment.attach.thumb if banner.attachment %>
+          <%= image_tag banner.attach.thumb if banner.attach %>
         </td>
         <td>
           <% if banner.onshelf? %>

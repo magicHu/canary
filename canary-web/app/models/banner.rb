@@ -1,14 +1,14 @@
 class Banner < ActiveRecord::Base
-  attr_accessible :title, :desc, :state, :link, :link_text, :start_date, :stop_date, :photo, :position
-  attr_accessor :photo
+  attr_accessible :title, :desc, :state, :link, :link_text, :start_date, :stop_date, :position, :attach
   
   has_one :attachment, :as => :attachmentable, :dependent => :destroy
   
   validates :title, :desc, :link, :link_text, :presence => true
-  validates :photo, :presence => true, :on => :create
   
   acts_as_list
   default_scope :order => 'position'
+
+  delegate :attach, :attach=, :to => :attachment
   
   class << self
     ['onshelf', 'offshelf'].each do |state|
@@ -19,7 +19,7 @@ class Banner < ActiveRecord::Base
   end
 
   def init_position_to_bottom
-    self[position_column] = bottom_position_in_list.to_i + 1  
+    add_to_list_bottom 
     save!
   end
 
