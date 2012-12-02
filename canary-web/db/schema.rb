@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121127130003) do
+ActiveRecord::Schema.define(:version => 20121202035209) do
 
   create_table "attachments", :force => true do |t|
     t.string   "file_name"
@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(:version => 20121127130003) do
     t.integer  "room_num"
     t.string   "order_name"
     t.string   "order_phone"
-    t.integer  "status"
+    t.string   "status"
     t.integer  "price"
     t.date     "checkin"
     t.date     "checkout"
