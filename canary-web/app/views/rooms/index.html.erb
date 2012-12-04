@@ -22,6 +22,7 @@
         <td><%= room.total %></td>
         <td><%= room.price %></td>
         <td>
+          <%= link_to '预订',  new_order_path(room_id: room.id), :class => 'btn btn-success'%>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_room_path(room), :class => 'btn btn-mini' %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),

@@ -5,6 +5,7 @@ class Order < ActiveRecord::Base
   belongs_to :user
 
   validates :checkin, :checkout, :order_name, :order_phone, :room_num, :presence => true
+  validates :room_id, :presence => true
   delegate :desc, :to => :room, :allow_nil => true, :prefix => true 
   delegate :email,  :to => :user, :allow_nil => true, :prefix => true
 

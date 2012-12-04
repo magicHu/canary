@@ -1,10 +1,7 @@
 <%= simple_form_for @order, :html => { :class => 'form-horizontal' } do |f| %>
-  <%= f.input :room_id %>
   <%= f.input :room_num %>
   <%= f.input :order_name %>
   <%= f.input :order_phone, :as => :tel %>
-  <%= f.input :status %>
-  <%= f.input :price %>
   <!-- <%= f.input :checkin, :input_html => { :class => 'datepicker' } %> -->
   <%= f.input :checkin %>
   <%= f.input :checkout %>

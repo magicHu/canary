@@ -28,6 +28,7 @@ class OrdersController < ApplicationController
   # GET /orders/new
   # GET /orders/new.json
   def new
+    session[:room_id] = params[:room_id]
     @order = Order.new
 
     respond_to do |format|
@@ -44,11 +45,11 @@ class OrdersController < ApplicationController
   # POST /orders
   # POST /orders.json
   def create
-
-    # room = Room.find(params[:order][:room_id])
-    # @order = room.orders.build(params[:order])
-    @order = Order.new(params[:order])
+    room = Room.find(session[:room_id])
+    @order = room.orders.build(params[:order])
     @order.user_id = current_user.id if current_user
+    @order.price = room.price * @order.room_num
+    @order.status = "not check"
 
     respond_to do |format|
       if @order.save
@@ -65,6 +66,7 @@ class OrdersController < ApplicationController
   # PUT /orders/1.json
   def update
     @order = Order.find(params[:id])
+    @order.price = room.price * @order.room_num
 
     respond_to do |format|
       if @order.update_attributes(params[:order])
