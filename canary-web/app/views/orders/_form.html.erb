@@ -1,4 +1,4 @@
-<%= simple_form_for @order, :html => { :class => 'form-horizontal' } do |f| %>
+<%= simple_form_for [@room, @order], :html => { :class => 'form-horizontal' } do |f| %>
   <%= f.input :room_num %>
   <%= f.input :order_name %>
   <%= f.input :order_phone, :as => :tel %>

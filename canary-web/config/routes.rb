@@ -4,7 +4,9 @@ CanaryWeb::Application.routes.draw do
 
   resources :room_resources
 
-  resources :rooms
+  resources :rooms do
+    resources :orders
+  end
 
   resources :banners do
     member do
