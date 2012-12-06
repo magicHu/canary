@@ -4,8 +4,11 @@
   <%= f.input :link %>
   <%= f.input :link_text %>
 
-  <%= f.input :attach, :as => :file %>
-  <%= image_tag @banner.attach.thumb if @banner.attach %>
+  <%= f.simple_fields_for :attachment do |a| %>
+    <%= a.input :attach, :as => :file %>
+  <% end %>
+
+  <%= image_tag @banner.attachment.attach.thumb if @banner.attachment.attach %>
 
   <div class="form-actions">
     <%= f.button :submit, :class => 'btn-primary' %>

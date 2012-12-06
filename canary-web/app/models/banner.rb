@@ -1,14 +1,15 @@
 class Banner < ActiveRecord::Base
-  attr_accessible :title, :desc, :state, :link, :link_text, :start_date, :stop_date, :position, :attach
+  attr_accessible :title, :desc, :state, :link, :link_text, :position, :attach, :attachment_attributes
   
   has_one :attachment, :as => :attachmentable, :dependent => :destroy
+  accepts_nested_attributes_for :attachment
   
   validates :title, :desc, :link, :link_text, :presence => true
   
   acts_as_list
   default_scope :order => 'position'
 
-  delegate :attach, :attach=, :to => :attachment
+  delegate :attach, :to => :attachment, :allow_nil => true
   
   class << self
     ['onshelf', 'offshelf'].each do |state|

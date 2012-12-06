@@ -26,6 +26,7 @@ class BannersController < ApplicationController
   # GET /banners/new.json
   def new
     @banner = Banner.new
+    @attachment = @banner.build_attachment
 
     respond_to do |format|
       format.html # new.html.erb
@@ -42,11 +43,9 @@ class BannersController < ApplicationController
   # POST /banners.json
   def create
     @banner = Banner.new(params[:banner])
-    
+
     respond_to do |format|
       if @banner.save
-        attachment = @banner.photo
-        Attachment.create(:attach => attachment, :attachmentable => @banner) if attachment
         format.html { redirect_to @banner, notice: 'Banner was successfully created.' }
         format.json { render json: @banner, status: :created, location: @banner }
       else
