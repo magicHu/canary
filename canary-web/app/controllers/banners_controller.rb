@@ -26,7 +26,7 @@ class BannersController < ApplicationController
   # GET /banners/new.json
   def new
     @banner = Banner.new
-    @attachment = @banner.build_attachment
+    @banner.build_attachment
 
     respond_to do |format|
       format.html # new.html.erb

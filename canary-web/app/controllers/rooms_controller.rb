@@ -25,6 +25,9 @@ class RoomsController < ApplicationController
   # GET /rooms/new.json
   def new
     @room = Room.new
+    4.times do 
+      @room.attachments.build
+    end
 
     respond_to do |format|
       format.html # new.html.erb

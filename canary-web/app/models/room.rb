@@ -1,8 +1,9 @@
 class Room < ActiveRecord::Base
-  attr_accessible :address, :desc, :name, :price, :total
+  attr_accessible :address, :desc, :name, :price, :total, :attachments_attributes
 
   has_many :orders  
   has_many :attachments, :as => :attachmentable, :dependent => :destroy
+  accepts_nested_attributes_for :attachments
 
   validates :address, :desc, :name, :price, :total, :presence => true
   validates_numericality_of :price, :total, :message => "is not a number"
