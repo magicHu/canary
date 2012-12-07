@@ -6,9 +6,12 @@ class Attachment < ActiveRecord::Base
   
   belongs_to :attachmentable, :polymorphic => true
   
-  validates :attach, :presence => true
+  validates :attach, :presence => true, :file_size => { 
+    :maximum => 0.5.megabytes.to_i
+  } 
   
   before_save :save_attachment_attributes
+  after_destroy :remove_attach!
   
   protected
   def save_attachment_attributes

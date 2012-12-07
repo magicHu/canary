@@ -19,4 +19,4 @@
 
 .project
 
-/public/uploads
+/public/uploads/*
