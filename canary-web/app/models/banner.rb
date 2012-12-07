@@ -2,7 +2,7 @@ class Banner < ActiveRecord::Base
   attr_accessible :title, :desc, :state, :link, :link_text, :position, :attach, :attachment_attributes
   
   has_one :attachment, :as => :attachmentable, :dependent => :destroy
-  accepts_nested_attributes_for :attachment
+  accepts_nested_attributes_for :attachment, :allow_destroy => true
   
   validates :title, :desc, :link, :link_text, :presence => true
   

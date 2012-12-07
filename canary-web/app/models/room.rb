@@ -3,7 +3,7 @@ class Room < ActiveRecord::Base
 
   has_many :orders  
   has_many :attachments, :as => :attachmentable, :dependent => :destroy
-  accepts_nested_attributes_for :attachments
+  accepts_nested_attributes_for :attachments, :allow_destroy => true
 
   validates :address, :desc, :name, :price, :total, :presence => true
   validates_numericality_of :price, :total, :message => "is not a number"

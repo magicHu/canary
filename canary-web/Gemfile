@@ -13,6 +13,7 @@ gem "twitter-bootstrap-rails", "~> 2.1.1"
 
 # 表单
 gem 'simple_form'
+gem 'nested_form'
 
 # 注册/登录
 gem "devise", "~> 2.1.2"

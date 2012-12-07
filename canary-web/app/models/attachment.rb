@@ -11,7 +11,6 @@ class Attachment < ActiveRecord::Base
   } 
   
   before_save :save_attachment_attributes
-  after_destroy :remove_attach!
   
   protected
   def save_attachment_attributes

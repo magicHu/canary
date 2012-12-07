@@ -1,4 +1,4 @@
-<%= simple_form_for @room, :html => { :class => 'form-horizontal' } do |f| %>
+<%= simple_nested_form_for @room, :html => { :class => 'form-horizontal' } do |f| %>
   <%= f.input :name %>
   <%= f.input :address %>
   <%= f.input :desc, :as => :text, :input_html => { :rows => 6} %>
@@ -7,7 +7,9 @@
 
   <%= f.simple_fields_for :attachments do |a| %>
     <%= a.input :attach, :as => :file %>
+    <%= a.link_to_remove "Remove this attachment" %>
   <% end %>
+  <%= f.link_to_add "Add a attachment", :attachments %>
 
   <% @room.attachments.each do |attachment| %>
     <%= image_tag(attachment.attach.thumb) %>
