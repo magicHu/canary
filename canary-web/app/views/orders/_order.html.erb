@@ -1,0 +1,23 @@
+<% room = order.room %>
+<li>
+  <div class="orderTime">
+    <span>订单号：<strong><%= order.id %></strong><%= "下单时间：#{order.created_at}" %>
+    </span>
+    <%= link_to "查看订单详情>>", order_path(order) if !detail %>
+  </div>
+  <div class="orderContent">
+    <div class="grid_2 alpha">
+      <%= link_to image_tag(room.attachments.first.attach, size: "70*43"),  room_path(room) %>
+    </div>
+    <div class="grid_8">
+      <%= link_to room.name, room_path(room) %><br>
+      <%= "入住：#{order.checkin} 退房：#{order.checkout}" %>
+    </div>
+    <div class="grid_3">
+      总房费：<span class="cf60 tahoma fb"><em class="yen">&yen;</em><%= order.price %></span><br/>订金：<span class="cf60 tahoma fb"><em class="yen">&yen;</em><%= room.price %></span>
+    </div>
+    <div class="grid_2">订单状态：<span class="cf60">
+      <%= order.status %></span>
+    </div>
+  </div>
+</li>

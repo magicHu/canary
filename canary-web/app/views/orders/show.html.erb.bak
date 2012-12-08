@@ -1,0 +1,37 @@
+<%- model_class = Order -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:user_id) %>:</strong></dt>
+  <dd><%= @order.user_email %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:room_id) %>:</strong></dt>
+  <dd><%= @order.room_desc %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:room_num) %>:</strong></dt>
+  <dd><%= @order.room_num %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:order_name) %>:</strong></dt>
+  <dd><%= @order.order_name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:order_phone) %>:</strong></dt>
+  <dd><%= @order.order_phone %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:status) %>:</strong></dt>
+  <dd><%= @order.status %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:price) %>:</strong></dt>
+  <dd><%= @order.price %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:checkin) %>:</strong></dt>
+  <dd><%= @order.checkin %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:checkout) %>:</strong></dt>
+  <dd><%= @order.checkout %></dd>
+</dl>
+
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              orders_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_order_path(@order), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              order_path(@order),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>

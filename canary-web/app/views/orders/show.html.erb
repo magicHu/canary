@@ -1,37 +1,793 @@
-<%- model_class = Order -%>
-<div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="description" content="
+" />
+    <meta name="keywords" content="
+" />
+    <meta http-equiv="X-UA-Compatible" content="IE=8">
+    <link rel="shortcut icon" href="http://staticfile.tujia.com/PortalSite/Images/favicon.ico" type="image/x-icon" />
+    <link rel="bookmark" href="http://staticfile.tujia.com/PortalSite/Images/favicon.ico" type="image/x-icon" />
+    <title>
+订单详情- 途家网
+</title>
+    
+<link rel="stylesheet" type="text/css" href="http://staticfile.tujia.com/portalsite2/styles/css_user?v=2.2" />
+
+    <script type="text/javascript" src="http://staticfile.tujia.com/PortalSite2/scripts/base/jquery.js?v=2.2"></script>
+    
+<script type="text/javascript" src="http://staticfile.tujia.com/PortalSite2/scripts/js_user_head?v=2.2"></script>
+
+</head>
+<body>
+    <!--VISITOR01-->
+    
+<!-- top Start-->
+<div id="top">
+    <div class="container_24 topBox  pt2 pl5 pr5 clearfix">
+        <div class="grid_15">
+            <div class="navBox pr" id="navBox">
+                <ul class="clearfix">
+                    <li data-rel="#destination" data-col="1"><a href="javascript:void(0)" class="db">国内目的地<em class="dib pl10"></em></a></li>
+                    <li data-rel="#worldDestination" data-col="1"><a href="javascript:void(0)" class="db">海外目的地<em class="dib pl10"></em></a></li>
+                    <li data-rel="#landscape" data-col="3"><a href="javascript:void(0)" class="db">主题推荐<em class="dib pl10"></em></a></li>
+                    <li data-rel="#travel" data-col="3"><a href="javascript:void(0)" class="db">出游类型<em class="dib pl10"></em></a></li>
+                   
+                </ul>
+                <div class="listBox vh" id="destination">
+                        <ul class="destinationWrapper clearfix">
+                            
+                <li style="" class="">
+                  <dl>
+                    <dt>海南</dt>
+                    <dd>
+                                        
+                      <a href="/sanya_gongyu/" target="_blank" class="dib">三亚</a>
+                                        
+                      <a href="/boao_gongyu/" target="_blank" class="dib">博鳌(琼海)</a>
+                                        
+                      <a href="/wenchang_gongyu/" target="_blank" class="dib">文昌</a>
+                                        
+                      <a href="/wanning_gongyu/" target="_blank" class="dib">万宁</a>
+                                        
+                      <a href="/wuzhishan_gongyu/" target="_blank" class="dib">五指山</a>
+                                        
+                    </dd>
+                  </dl>
+                </li>
+                            
+                <li style="" class="liEven">
+                  <dl>
+                    <dt>西南</dt>
+                    <dd>
+                                        
+                      <a href="/guilin_gongyu/" target="_blank" class="dib">桂林</a>
+                                        
+                      <a href="/dali_gongyu/" target="_blank" class="dib">大理</a>
+                                        
+                      <a href="/lijiang_gongyu/" target="_blank" class="dib">丽江</a>
+                                        
+                      <a href="/kunming_gongyu/" target="_blank" class="dib">昆明</a>
+                                        
+                      <a href="/tengchong_gongyu/" target="_blank" class="dib">腾冲</a>
+                                        
+                      <a href="/xishuangbanna_gongyu/" target="_blank" class="dib">西双版纳</a>
+                                        
+                      <a href="/puershi_gongyu/" target="_blank" class="dib">普洱市</a>
+                                        
+                    </dd>
+                  </dl>
+                </li>
+                            
+                <li style="" class="">
+                  <dl>
+                    <dt>江苏</dt>
+                    <dd>
+                                        
+                      <a href="/nanjing_gongyu/" target="_blank" class="dib">南京</a>
+                                        
+                      <a href="/nantong_gongyu/" target="_blank" class="dib">南通</a>
+                                        
+                      <a href="/suzhou_gongyu/" target="_blank" class="dib">苏州</a>
+                                        
+                      <a href="/wuxi_gongyu/" target="_blank" class="dib">无锡</a>
+                                        
+                      <a href="/yangzhou_gongyu/" target="_blank" class="dib">扬州</a>
+                                        
+                      <a href="/zhenjiang_gongyu/" target="_blank" class="dib">镇江</a>
+                                        
+                      <a href="/xuyi_gongyu/" target="_blank" class="dib">盱眙</a>
+                                        
+                      <a href="/zhouzhuang_gongyu/" target="_blank" class="dib">周庄</a>
+                                        
+                      <a href="/changzhou_gongyu/" target="_blank" class="dib">常州</a>
+                                        
+                      <a href="/kunshan_gongyu/" target="_blank" class="dib">昆山</a>
+                                        
+                      <a href="/lianyungang_gongyu/" target="_blank" class="dib">连云港</a>
+                                        
+                      <a href="/yancheng_gongyu/" target="_blank" class="dib">盐城</a>
+                                        
+                    </dd>
+                  </dl>
+                </li>
+                            
+                <li style="" class="liEven">
+                  <dl>
+                    <dt>山东</dt>
+                    <dd>
+                                        
+                      <a href="/qingdao_gongyu/" target="_blank" class="dib">青岛</a>
+                                        
+                      <a href="/weihai_gongyu/" target="_blank" class="dib">威海</a>
+                                        
+                      <a href="/yantai_gongyu/" target="_blank" class="dib">烟台</a>
+                                        
+                      <a href="/penglai_gongyu/" target="_blank" class="dib">蓬莱</a>
+                                        
+                      <a href="/jinan_gongyu/" target="_blank" class="dib">济南</a>
+                                        
+                      <a href="/qixia_gongyu/" target="_blank" class="dib">栖霞(烟台)</a>
+                                        
+                      <a href="/zaozhuang_gongyu/" target="_blank" class="dib">枣庄</a>
+                                        
+                    </dd>
+                  </dl>
+                </li>
+                            
+                <li style="" class="">
+                  <dl>
+                    <dt>浙江</dt>
+                    <dd>
+                                        
+                      <a href="/hangzhou_gongyu/" target="_blank" class="dib">杭州</a>
+                                        
+                      <a href="/ningbo_gongyu/" target="_blank" class="dib">宁波</a>
+                                        
+                      <a href="/zhoushan_gongyu/" target="_blank" class="dib">舟山</a>
+                                        
+                      <a href="/xitang_gongyu/" target="_blank" class="dib">西塘</a>
+                                        
+                    </dd>
+                  </dl>
+                </li>
+                            
+                <li style="" class="liEven">
+                  <dl>
+                    <dt>川渝</dt>
+                    <dd>
+                                        
+                      <a href="/chengdu_gongyu/" target="_blank" class="dib">成都</a>
+                                        
+                      <a href="/chongqing_gongyu/" target="_blank" class="dib">重庆</a>
+                                        
+                      <a href="/jiuzhaigou_gongyu/" target="_blank" class="dib">九寨沟</a>
+                                        
+                      <a href="/dujiangyan_gongyu/" target="_blank" class="dib">都江堰</a>
+                                        
+                      <a href="/emeishan_gongyu/" target="_blank" class="dib">峨眉山</a>
+                                        
+                    </dd>
+                  </dl>
+                </li>
+                            
+                <li style="" class="">
+                  <dl>
+                    <dt>广东</dt>
+                    <dd>
+                                        
+                      <a href="/guangzhou_gongyu/" target="_blank" class="dib">广州</a>
+                                        
+                      <a href="/shenzhen_gongyu/" target="_blank" class="dib">深圳</a>
+                                        
+                      <a href="/zhuhai_gongyu/" target="_blank" class="dib">珠海</a>
+                                        
+                    </dd>
+                  </dl>
+                </li>
+                            
+                <li style="" class="liEven">
+                  <dl>
+                    <dt>山陕</dt>
+                    <dd>
+                                        
+                      <a href="/xian_gongyu/" target="_blank" class="dib">西安</a>
+                                        
+                      <a href="/yanan_gongyu/" target="_blank" class="dib">延安</a>
+                                        
+                      <a href="/pingyao_gongyu/" target="_blank" class="dib">平遥</a>
+                                        
+                    </dd>
+                  </dl>
+                </li>
+                            
+                <li style="" class="">
+                  <dl>
+                    <dt>东北</dt>
+                    <dd>
+                                        
+                      <a href="/dalian_gongyu/" target="_blank" class="dib">大连</a>
+                                        
+                      <a href="/yingkou_gongyu/" target="_blank" class="dib">营口</a>
+                                        
+                    </dd>
+                  </dl>
+                </li>
+                            
+                <li style="" class="liEven">
+                  <dl>
+                    <dt>安徽</dt>
+                    <dd>
+                                        
+                      <a href="/hefei_gongyu/" target="_blank" class="dib">合肥</a>
+                                        
+                      <a href="/huangshan_gongyu/" target="_blank" class="dib">黄山</a>
+                                        
+                    </dd>
+                  </dl>
+                </li>
+                            
+                <li style="" class="">
+                  <dl>
+                    <dt>京沪</dt>
+                    <dd>
+                                        
+                      <a href="/beijing_gongyu/" target="_blank" class="dib">北京</a>
+                                        
+                      <a href="/shanghai_gongyu/" target="_blank" class="dib">上海</a>
+                                        
+                    </dd>
+                  </dl>
+                </li>
+                            
+                <li style="" class="liEven">
+                  <dl>
+                    <dt>福建</dt>
+                    <dd>
+                                        
+                      <a href="/xiamen_gongyu/" target="_blank" class="dib">厦门</a>
+                                        
+                    </dd>
+                  </dl>
+                </li>
+                            
+                <li style="" class="">
+                  <dl>
+                    <dt>江西</dt>
+                    <dd>
+                                        
+                      <a href="/lushan_gongyu/" target="_blank" class="dib">庐山</a>
+                                        
+                      <a href="/wuyuan_gongyu/" target="_blank" class="dib">婺源</a>
+                                        
+                    </dd>
+                  </dl>
+                </li>
+                            
+                <li style="border:none" class="liEven">
+                  <dl>
+                    <dt>湖北</dt>
+                    <dd>
+                                        
+                      <a href="/wuhan_gongyu/" target="_blank" class="dib">武汉</a>
+                                        
+                    </dd>
+                  </dl>
+                </li>
+                            
+              </ul>
+                </div>
+                <div class="listBox vh" id="worldDestination">
+                        <ul class="destinationWrapper clearfix">
+                            
+                <li style="" class="none">
+                  <dl>
+                    <dt>东南亚</dt>
+                    <dd>
+                                        
+                      <a href="http://international.tujia.com/balidao_gongyu_r19/" target="_blank" class="dib">巴厘岛</a>
+                                        
+                      <a href="http://international.tujia.com/pujidao_gongyu_r28/" target="_blank" class="dib">普吉岛</a>
+                                        
+                      <a href="http://international.tujia.com/batiya_gongyu_r41/" target="_blank" class="dib">芭提雅</a>
+                                        
+                      <a href="http://international.tujia.com/sumeidao_gongyu_r29/" target="_blank" class="dib">苏梅岛</a>
+                                        
+                      <a href="http://international.tujia.com/mangu_gongyu_r40/" target="_blank" class="dib">曼谷</a>
+                                        
+                    </dd>
+                  </dl>
+                </li>
+                            
+                <li style="" class="liEven">
+                  <dl>
+                    <dt>澳大利亚</dt>
+                    <dd>
+                                        
+                      <a href="http://international.tujia.com/xini_gongyu_r43/" target="_blank" class="dib">悉尼</a>
+                                        
+                      <a href="http://international.tujia.com/huangjinhaian_gongyu_r44/" target="_blank" class="dib">黄金海岸</a>
+                                        
+                      <a href="http://international.tujia.com/moerben_gongyu_r45/" target="_blank" class="dib">墨尔本</a>
+                                        
+                    </dd>
+                  </dl>
+                </li>
+                            
+                <li style="" class="none">
+                  <dl>
+                    <dt>美国</dt>
+                    <dd>
+                                        
+                      <a href="http://international.tujia.com/luoshanji_gongyu_r20/" target="_blank" class="dib">洛杉矶</a>
+                                        
+                      <a href="http://international.tujia.com/jiujinshan_gongyu_r23/" target="_blank" class="dib">旧金山</a>
+                                        
+                      <a href="http://international.tujia.com/lasiweijiasi_gongyu_r31/" target="_blank" class="dib">拉斯维加斯</a>
+                                        
+                      <a href="http://international.tujia.com/shengdiyage_gongyu_r22/" target="_blank" class="dib">圣地亚哥</a>
+                                        
+                      <a href="http://international.tujia.com/niuyue_gongyu_r30/" target="_blank" class="dib">纽约</a>
+                                        
+                      <a href="http://international.tujia.com/xiyatu_gongyu_r34/" target="_blank" class="dib">西雅图</a>
+                                        
+                      <a href="http://international.tujia.com/huashengdun_gongyu_r32/" target="_blank" class="dib">华盛顿DC</a>
+                                        
+                      <a href="http://international.tujia.com/boshidun_gongyu_r33/" target="_blank" class="dib">波士顿</a>
+                                        
+                      <a href="http://international.tujia.com/zhijiage_gongyu_r39/" target="_blank" class="dib">芝加哥</a>
+                                        
+                      <a href="http://international.tujia.com/xiaweiyi_gongyu_r46/" target="_blank" class="dib">夏威夷</a>
+                                        
+                    </dd>
+                  </dl>
+                </li>
+                            
+                <li style="" class="liEven">
+                  <dl>
+                    <dt>夏威夷</dt>
+                    <dd>
+                                        
+                      <a href="http://international.tujia.com/xiaweiyidadao_gongyu_r48/" target="_blank" class="dib">夏威夷大岛</a>
+                                        
+                      <a href="http://international.tujia.com/wahudao_gongyu_r47/" target="_blank" class="dib">瓦胡岛</a>
+                                        
+                      <a href="http://international.tujia.com/maoyidao_gongyu_r49/" target="_blank" class="dib">茂宜岛</a>
+                                        
+                      <a href="http://international.tujia.com/kaoaidao_gongyu_r50/" target="_blank" class="dib">考艾岛</a>
+                                        
+                    </dd>
+                  </dl>
+                </li>
+                            
+                <li style="" class="none">
+                  <dl>
+                    <dt>英国</dt>
+                    <dd>
+                                        
+                      <a href="http://international.tujia.com/lundun_gongyu_r17/" target="_blank" class="dib">伦敦</a>
+                                        
+                    </dd>
+                  </dl>
+                </li>
+                            
+                <li style="" class="liEven">
+                  <dl>
+                    <dt>法国</dt>
+                    <dd>
+                                        
+                      <a href="http://international.tujia.com/bali_gongyu_r26/" target="_blank" class="dib">巴黎</a>
+                                        
+                      <a href="http://international.tujia.com/puluowangsi_gongyu_r25/" target="_blank" class="dib">普罗旺斯</a>
+                                        
+                      <a href="http://international.tujia.com/nisi_gongyu_r18/" target="_blank" class="dib">尼斯</a>
+                                        
+                    </dd>
+                  </dl>
+                </li>
+                            
+                <li style="" class="none">
+                  <dl>
+                    <dt>德国</dt>
+                    <dd>
+                                        
+                      <a href="http://international.tujia.com/bolin_gongyu_r21/" target="_blank" class="dib">柏林</a>
+                                        
+                      <a href="http://international.tujia.com/munihei_gongyu_r35/" target="_blank" class="dib">慕尼黑</a>
+                                        
+                    </dd>
+                  </dl>
+                </li>
+                            
+                <li style="" class="liEven">
+                  <dl>
+                    <dt>意大利</dt>
+                    <dd>
+                                        
+                      <a href="http://international.tujia.com/weinisi_gongyu_r14/" target="_blank" class="dib">威尼斯</a>
+                                        
+                      <a href="http://international.tujia.com/luoma_gongyu_r15/" target="_blank" class="dib">罗马</a>
+                                        
+                      <a href="http://international.tujia.com/milan_gongyu_r27/" target="_blank" class="dib">米兰</a>
+                                        
+                    </dd>
+                  </dl>
+                </li>
+                            
+                <li style="" class="none">
+                  <dl>
+                    <dt>西班牙</dt>
+                    <dd>
+                                        
+                      <a href="http://international.tujia.com/basailuona_gongyu_r24/" target="_blank" class="dib">巴塞罗那</a>
+                                        
+                      <a href="http://international.tujia.com/madeli_gongyu_r16/" target="_blank" class="dib">马德里</a>
+                                        
+                    </dd>
+                  </dl>
+                </li>
+                            
+                <li style="" class="liEven">
+                  <dl>
+                    <dt>希腊</dt>
+                    <dd>
+                                        
+                      <a href="http://international.tujia.com/shengtuolinidao_gongyu_r36/" target="_blank" class="dib">圣托里尼岛</a>
+                                        
+                      <a href="http://international.tujia.com/mikenuosidao_gongyu_r37/" target="_blank" class="dib">米克诺斯岛</a>
+                                        
+                      <a href="http://international.tujia.com/kelitedao_gongyu_r13/" target="_blank" class="dib">克里特岛</a>
+                                        
+                      <a href="http://international.tujia.com/yadian_gongyu_r38/" target="_blank" class="dib">雅典</a>
+                                        
+                    </dd>
+                  </dl>
+                </li>
+                            
+                <li style="border:none" class="none">
+                  <dl>
+                    <dt>土耳其</dt>
+                    <dd>
+                                        
+                      <a href="http://international.tujia.com/yisitanbuer_gongyu_r42/" target="_blank" class="dib">伊斯坦布尔</a>
+                                        
+                    </dd>
+                  </dl>
+                </li>
+                            
+              </ul>
+                </div>
+          <div class="listBox vh themeWrapper" id="landscape" >
+        
+                        <ul class=" clearfix">
+                            
+                              <li><a href="/theme/Haibinmanbu.htm" target="_blank" class="db" rel="nofollow">海滨漫步</a></li>
+                            
+                              <li><a href="/theme/Xiuxianshiguang.htm" target="_blank" class="db" rel="nofollow">休闲时光</a></li>
+                            
+                              <li><a href="/theme/Jizhitiyan.htm" target="_blank" class="db" rel="nofollow">极致体验</a></li>
+                            
+                         </ul>
+              
+                </div>
+          <div class="listBox vh themeWrapper" id="travel">
+        
+                        <ul class=" clearfix">
+                            
+                              <li><a href="/theme/Langman.htm" target="_blank" class="db" rel="nofollow">浪漫之旅</a></li>
+                            
+                              <li><a href="/theme/Jiating.htm" target="_blank" class="db" rel="nofollow">家庭出游</a></li>
+                            
+                              <li><a href="/theme/Juhui.htm" target="_blank" class="db" rel="nofollow">朋友聚会</a></li>
+                            
+                        </ul>
+               
+                </div>
+            </div>
+        </div>
+        <div class="grid_9">
+      <div  class="globalSearc fl pr mt2">
+        <em class="globalSearcLeft pa"></em>
+        <em class="globalSearcRight pa"></em>
+        <div class="globalSearcContent">
+          <form action="/gongyu" method="get" id="topSearchForm">
+                    <input type="hidden" value="" name="startDate" />
+                    <input type="hidden" value="" name="endDate" />
+                    <input type="hidden" value="" name="guestCount" />
+            <div class="cityName fl"><select id="citySelect" name="destinationId"><option selected="selected" value="1" name="sanya" data-show="True">三亚</option><option  value="7" name="hangzhou" data-show="True">杭州</option><option  value="10" name="chengdu" data-show="True">成都</option><option  value="9" name="nanjing" data-show="True">南京</option><option  value="33" name="xiamen" data-show="True">厦门</option><option  value="8" name="qingdao" data-show="True">青岛</option><option  value="32" name="guilin" data-show="True">桂林</option><option  value="11" name="suzhou" data-show="True">苏州</option><option  value="12" name="lijiang" data-show="True">丽江</option><option  value="28" name="xitang" data-show="True">西塘</option><option  value="36" name="dali" data-show="True">大理</option><option  value="17" name="xian" data-show="True">西安</option><option  value="18" name="dalian" data-show="True">大连</option><option  value="22" name="chongqing" data-show="True">重庆</option><option  value="30" name="weihai" data-show="True">威海</option><option  value="44" name="yantai" data-show="True">烟台</option><option  value="29" name="penglai" data-show="True">蓬莱</option><option  value="45" name="guangzhou" data-show="True">广州</option><option  value="6" name="huangshan" data-show="True">黄山</option><option  value="23" name="shanghai" data-show="True">上海</option><option  value="13" name="zhouzhuang" data-show="True">周庄</option><option  value="14" name="wuxi" data-show="True">无锡</option><option  value="16" name="ningbo" data-show="True">宁波</option><option  value="19" name="jinan" data-show="True">济南</option><option  value="20" name="zhoushan" data-show="True">舟山</option><option  value="4" name="wenchang" data-show="True">文昌</option><option  value="15" name="jiuzhaigou" data-show="True">九寨沟</option><option  value="21" name="changzhou" data-show="True">常州</option><option  value="25" name="yanan" data-show="True">延安</option><option  value="27" name="zhenjiang" data-show="True">镇江</option><option  value="26" name="yangzhou" data-show="True">扬州</option><option  value="35" name="yingkou" data-show="True">营口</option><option  value="38" name="zaozhuang" data-show="True">枣庄</option><option  value="34" name="xuyi" data-show="True">盱眙</option><option  value="2" name="boao" data-show="True">博鳌(琼海)</option><option  value="37" name="pingyao" data-show="True">平遥</option><option  value="43" name="wanning" data-show="True">万宁</option><option  value="42" name="lushan" data-show="True">庐山</option><option  value="31" name="kunming" data-show="True">昆明</option><option  value="46" name="kunshan" data-show="True">昆山</option><option  value="48" name="beijing" data-show="True">北京</option><option  value="49" name="shenzhen" data-show="True">深圳</option><option  value="50" name="hefei" data-show="True">合肥</option><option  value="3" name="wuzhishan" data-show="True">五指山</option><option  value="51" name="zhuhai" data-show="True">珠海</option><option  value="52" name="nantong" data-show="True">南通</option><option  value="54" name="yancheng" data-show="True">盐城</option><option  value="55" name="wuhan" data-show="True">武汉</option><option  value="56" name="tengchong" data-show="True">腾冲</option><option  value="59" name="wuyuan" data-show="True">婺源</option><option  value="47" name="qixia" data-show="True">栖霞(烟台)</option><option  value="40" name="emeishan" data-show="True">峨眉山</option><option  value="39" name="lianyungang" data-show="True">连云港</option><option  value="41" name="dujiangyan" data-show="True">都江堰</option><option  value="58" name="xishuangbanna" data-show="True">西双版纳</option><option  value="61" name="puershi" data-show="True">普洱市</option></select></div>
+            <div class="searcBox fl ovh">
+                        <input class="searcText defaultColor lh20 db" id="keyword" name="keyword" type="text" value="景点/地址/特色" />  
+            </div>
+                    <div class="fl"><input type="submit" value=""   class="searcSubmit"  /></div>
+                </form> 
+        </div>
+      </div>
+            <a href="http://e.weibo.com/bjtujia" target="_blank" class="fr mt2 ml5" rel="nofollow"><img src="http://staticfile.tujia.com/PortalSite2/Images/sweibo.png" alt="" /></a>
+    </div>
+    </div>
+</div>
+<!-- top  End -->
+<!-- head Start -->
+<div id="headWrapper" class="pr">
+  <div class="container_24 headContent" id='publicHead'>
+    <div class="grid_11 logoWrapper">
+            <a href="http://www.tujia.com" title="途家网首页" class="logo db fl ovh">国内站</a>
+      <div class="fl db pl20">携程网战略合作伙伴<span class="db f16  cf60">高品质度假公寓预订平台</span></div>
+      <div id="changeCity" class="changeCity fl">
+        <span class="cf60 cur">国内站</span>
+      </div>
+    </div>
+    <div class="grid_13 tr">
+      <div class="tel f16"><span class="f12 mr5 ft">7X24小时</span><em class="dib pr5"></em><span class="cf60">400-188-1234</span></div>
+      <div class="submenu cc">
+            
+            <span class="dib vtb c6"><strong class="vm p0">您好，</strong><a href="/UserInfo/OrderList/" target="_blank" rel="nofollow" class="userName vm p0">liyijie825</a><a href="https://passport.tujia.com/PortalSite/Logout" rel="nofollow" class="linkButton vm">[退出]</a>&nbsp;&nbsp;</span>|<a id="mytujiamenu" data-rel="#mytujia" href="http://www.tujia.com/UserInfo/OrderList/" target="_blank"  rel="nofollow" class="dib pl10 pr10">我的途家</a>&nbsp;&nbsp;&nbsp;|<a href="javascript:;" rel="nofollow" class="dib pl10 pr10" onclick="window.open('http://content.tujia.com/kefu.htm','_blank','height=473,width=703,fullscreen=3,top=200,left=200,status=no,toolbar=no,menubar=no,resizable=no,scrollbars=no,location=no,titlebar=no,fullscreen=no');return false;">在线客服</a><a href="http://owner.tujia.com/Customer/Land" target="_blank" class="btn dib tc p0 ovh vm"  rel="nofollow">我是业主</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="mytujia" class="dn tl">
+    <ul>
+        <li><a href="http://www.tujia.com/UserInfo/OrderList/" target="_blank"  rel="nofollow" class=" lh24 pl10">我的订单</a></li>
+        <li><a href="http://www.tujia.com/UserInfo/CommentList/" target="_blank"  rel="nofollow" class=" lh24 pl10">我的点评</a></li>
+        <li><a href="http://www.tujia.com/UserInfo/Info/" target="_blank"  rel="nofollow" class=" lh24 pl10">个人资料</a></li>
+        <li><a href="http://www.tujia.com/UserInfo/Credits/" target="_blank"  rel="nofollow" class=" lh24 pl10">我的积分</a></li>
+    </ul>
+</div>
+<div id="menuCity" data-rel="#changeCity">
+    <ul>
+      <li><a href="http://international.tujia.com">海外站</a></li>
+    </ul>
+</div>
+<!-- head  End -->
+
+
+
+    <div  class="container_24">
+        <div class="grid_24" id="dir"><a href="http://www.tujia.com">国内站</a><em>&gt;</em>我的订单</div>
+    </div>
+    <div class="container_24 clearfix" id="orderWrapper">
+      <div class="grid_5">
+        <div class="user clearfix">
+          <div class="userInfo"><strong>liyijie825</strong>积分：<span class="integral">700</span></div>
+        </div>
+        <div class="menu">
+          <ul>
+            <li><a id="myorders" href="/UserInfo/OrderList/">我的订单</a></li>
+            <li><a id="mycomments" href="/UserInfo/CommentList/">点评</a></li>
+            <li><a id="myinfo" href="/UserInfo/Info/">个人资料</a></li>
+            <li><a id="mycredits" href="/UserInfo/Credits/">我的积分</a></li>
+            <li><a id="mypassword" href="/UserInfo/ChangePassword/">修改密码</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="grid_19" id="order">
+
+<div class="orderHead"><h4>订单详情</h4> <a href="/orders" class="button04"><strong>返回我的订单</strong></a></div>
+<ul class="orderList">
+  <%= render @order, detail: true %>
+  <% room = @order.room %>
+</ul>
+<div class="orderDetails">
+  <h4>详情</h4>
+  <ul>
+    <li><span>房屋名称：</span><%= room.name %></li>
+    <li><span>房屋信息：</span><%= room.desc %></li>
+    <li><span>入住日期：</span><%= @order.checkin %></li>
+    <li><span>退房日期：</span><%= @order.checkout %></li>
+    <li><span>联系人姓名：</span><%= @order.order_name %></li>
+    <li><span>联系人手机：</span><%= @order.order_phone %></li>
+  </ul>
+</div>
+<div class="mask dn" id="cancelOrder">
+  <div class="tit"><strong>取消订单</strong> <a href="javascript:;" class="closeBtn closeLayer" title="关闭"></a></div>
+  <div class="cancelContent">
+    <p>取消订单不可恢复，是否取消？ <span><a href="#" class="button button03 makecancel">取消订单</a><a href="#" class="button button03 closeLayer">不取消</a></span></p>  
+  </div>
+</div>
+</div>
+    </div>
+    
+<!-- footer Start -->
+
+
+<div class="container_24" id="footerDestinationBox">
+    <div class="grid_24 mt10" id="footerDestination">
+        <h4>途家度假公寓：</h4>
+        <ul>
+            
+                    <li><a href="/sanya_gongyu/" target="_blank">三亚酒店式公寓</a></li>
+                
+                    <li><a href="/hangzhou_gongyu/" target="_blank">杭州酒店式公寓</a></li>
+                
+                    <li><a href="/chengdu_gongyu/" target="_blank">成都酒店式公寓</a></li>
+                
+                    <li><a href="/nanjing_gongyu/" target="_blank">南京酒店式公寓</a></li>
+                
+                    <li><a href="/xiamen_gongyu/" target="_blank">厦门酒店式公寓</a></li>
+                
+                    <li><a href="/qingdao_gongyu/" target="_blank">青岛酒店式公寓</a></li>
+                
+                    <li><a href="/guilin_gongyu/" target="_blank">桂林酒店式公寓</a></li>
+                
+                    <li><a href="/suzhou_gongyu/" target="_blank">苏州酒店式公寓</a></li>
+                
+                    <li><a href="/lijiang_gongyu/" target="_blank">丽江酒店式公寓</a></li>
+                
+                    <li><a href="/xitang_gongyu/" target="_blank">西塘酒店式公寓</a></li>
+                
+                    <li><a href="/dali_gongyu/" target="_blank">大理酒店式公寓</a></li>
+                
+                    <li><a href="/xian_gongyu/" target="_blank">西安酒店式公寓</a></li>
+                
+                    <li><a href="/dalian_gongyu/" target="_blank">大连酒店式公寓</a></li>
+                
+                    <li><a href="/chongqing_gongyu/" target="_blank">重庆酒店式公寓</a></li>
+                
+                    <li><a href="/weihai_gongyu/" target="_blank">威海酒店式公寓</a></li>
+                
+                    <li><a href="/yantai_gongyu/" target="_blank">烟台酒店式公寓</a></li>
+                
+                    <li><a href="/penglai_gongyu/" target="_blank">蓬莱酒店式公寓</a></li>
+                
+                    <li><a href="/guangzhou_gongyu/" target="_blank">广州酒店式公寓</a></li>
+                
+                    <li><a href="/huangshan_gongyu/" target="_blank">黄山酒店式公寓</a></li>
+                
+                    <li><a href="/shanghai_gongyu/" target="_blank">上海酒店式公寓</a></li>
+                
+                    <li><a href="/zhouzhuang_gongyu/" target="_blank">周庄酒店式公寓</a></li>
+                
+                    <li><a href="/wuxi_gongyu/" target="_blank">无锡酒店式公寓</a></li>
+                
+                    <li><a href="/ningbo_gongyu/" target="_blank">宁波酒店式公寓</a></li>
+                
+                    <li><a href="/jinan_gongyu/" target="_blank">济南酒店式公寓</a></li>
+                
+                    <li><a href="/zhoushan_gongyu/" target="_blank">舟山酒店式公寓</a></li>
+                
+                    <li><a href="/wenchang_gongyu/" target="_blank">文昌酒店式公寓</a></li>
+                
+                    <li><a href="/jiuzhaigou_gongyu/" target="_blank">九寨沟酒店式公寓</a></li>
+                
+                    <li><a href="/changzhou_gongyu/" target="_blank">常州酒店式公寓</a></li>
+                
+                    <li><a href="/yanan_gongyu/" target="_blank">延安酒店式公寓</a></li>
+                
+                    <li><a href="/zhenjiang_gongyu/" target="_blank">镇江酒店式公寓</a></li>
+                
+                    <li><a href="/yangzhou_gongyu/" target="_blank">扬州酒店式公寓</a></li>
+                
+                    <li><a href="/yingkou_gongyu/" target="_blank">营口酒店式公寓</a></li>
+                
+                    <li><a href="/zaozhuang_gongyu/" target="_blank">枣庄酒店式公寓</a></li>
+                
+                    <li><a href="/xuyi_gongyu/" target="_blank">盱眙酒店式公寓</a></li>
+                
+                    <li><a href="/boao_gongyu/" target="_blank">博鳌(琼海)酒店式公寓</a></li>
+                
+                    <li><a href="/pingyao_gongyu/" target="_blank">平遥酒店式公寓</a></li>
+                
+                    <li><a href="/wanning_gongyu/" target="_blank">万宁酒店式公寓</a></li>
+                
+                    <li><a href="/lushan_gongyu/" target="_blank">庐山酒店式公寓</a></li>
+                
+                    <li><a href="/kunming_gongyu/" target="_blank">昆明酒店式公寓</a></li>
+                
+                    <li><a href="/kunshan_gongyu/" target="_blank">昆山酒店式公寓</a></li>
+                
+                    <li><a href="/beijing_gongyu/" target="_blank">北京酒店式公寓</a></li>
+                
+                    <li><a href="/shenzhen_gongyu/" target="_blank">深圳酒店式公寓</a></li>
+                
+                    <li><a href="/hefei_gongyu/" target="_blank">合肥酒店式公寓</a></li>
+                
+                    <li><a href="/wuzhishan_gongyu/" target="_blank">五指山酒店式公寓</a></li>
+                
+                    <li><a href="/zhuhai_gongyu/" target="_blank">珠海酒店式公寓</a></li>
+                
+                    <li><a href="/nantong_gongyu/" target="_blank">南通酒店式公寓</a></li>
+                
+                    <li><a href="/yancheng_gongyu/" target="_blank">盐城酒店式公寓</a></li>
+                
+                    <li><a href="/wuhan_gongyu/" target="_blank">武汉酒店式公寓</a></li>
+                
+                    <li><a href="/tengchong_gongyu/" target="_blank">腾冲酒店式公寓</a></li>
+                
+                    <li><a href="/wuyuan_gongyu/" target="_blank">婺源酒店式公寓</a></li>
+                
+                    <li><a href="/qixia_gongyu/" target="_blank">栖霞(烟台)酒店式公寓</a></li>
+                
+                    <li><a href="/emeishan_gongyu/" target="_blank">峨眉山酒店式公寓</a></li>
+                
+                    <li><a href="/lianyungang_gongyu/" target="_blank">连云港酒店式公寓</a></li>
+                
+                    <li><a href="/dujiangyan_gongyu/" target="_blank">都江堰酒店式公寓</a></li>
+                
+                    <li><a href="/xishuangbanna_gongyu/" target="_blank">西双版纳酒店式公寓</a></li>
+                
+                    <li><a href="/puershi_gongyu/" target="_blank">普洱市酒店式公寓</a></li>
+                
+        </ul>  
+        
+
+
+
+            
+    </div>
+</div>
+<div id="public_footer" class="container_24 mt20 cc pt20 pb50">
+  <div class="grid_24">
+    <a href="http://content.tujia.com/index.shtml" target="_blank" class="forst" rel="nofollow">关于我们</a>|<a href="http://content.tujia.com/business.shtml" target="_blank" rel="nofollow">业务介绍</a>|<a href="http://content.tujia.com/joinus.shtml" target="_blank" rel="nofollow">加入途家</a>|<a href="http://content.tujia.com/help.shtml" target="_blank" rel="nofollow">帮助中心</a>|<a href="/SiteMap/UnitDestination/" target="_blank">网站地图</a>
+    <p>&copy; Copyright 2012 tujia.com 途家&nbsp;&nbsp;&nbsp;&nbsp;版权所有&nbsp;&nbsp;&nbsp;&nbsp;不得转载<br />京ICP备11043397号</p>  
+  </div>
+  
 </div>
 
-<dl class="dl-horizontal">
-  <dt><strong><%= model_class.human_attribute_name(:user_id) %>:</strong></dt>
-  <dd><%= @order.user_email %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:room_id) %>:</strong></dt>
-  <dd><%= @order.room_desc %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:room_num) %>:</strong></dt>
-  <dd><%= @order.room_num %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:order_name) %>:</strong></dt>
-  <dd><%= @order.order_name %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:order_phone) %>:</strong></dt>
-  <dd><%= @order.order_phone %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:status) %>:</strong></dt>
-  <dd><%= @order.status %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:price) %>:</strong></dt>
-  <dd><%= @order.price %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:checkin) %>:</strong></dt>
-  <dd><%= @order.checkin %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:checkout) %>:</strong></dt>
-  <dd><%= @order.checkout %></dd>
-</dl>
+<!-- footer  End -->
 
-<div class="form-actions">
-  <%= link_to t('.back', :default => t("helpers.links.back")),
-              orders_path, :class => 'btn'  %>
-  <%= link_to t('.edit', :default => t("helpers.links.edit")),
-              edit_order_path(@order), :class => 'btn' %>
-  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-              order_path(@order),
-              :method => 'delete',
-              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-              :class => 'btn btn-danger' %>
-</div>
+     <script type="text/javascript">
+         var staticFileRoot = "http://staticfile.tujia.com",
+               minDate = "2012-12-08",
+               maxDate = "2013-11-08",
+               houseId;
+     </script>
+    
+<script type="text/javascript" src="http://staticfile.tujia.com/PortalSite2/scripts/js_common_foot?v=2.2"></script>
+<script type="text/javascript">
+    $("#myorders").addClass("current");
+
+    $(function () {
+        $("a[data-cancelorder-btn]").live("click", function () {
+            var $self = $(this);
+
+            $self.overlay({
+                top: "20%",
+                mask: {
+                    color: '#000',
+                    loadSpeed: 100,
+                    opacity: 0.5
+                },
+                target: "#cancelOrder",
+                closeOnClick: false,
+                close: ".closeLayer",
+                load: true,
+                onLoad: function () {
+                    var that = this;
+                    that.getOverlay().find("a.makecancel").unbind().bind("click",function () {
+                        var link = $self.attr("href");
+                        $(this).text("正在取消");
+                        $.post(link, function (data) {
+                            if (data.IsSucces) {
+                                window.location.reload();
+                            } else {
+                                that.getOverlay().find("div.cancelContent").html('<p>' + data.Message + '<span><a href="#" class="button button03 closeLayer">关 闭</a></span></p>')
+                            }
+                        });
+                    })
+                }
+            });
+            return false;
+        });
+    })
+</script>
+
+     <!--底部 百度统计 访问分析代码-->
+    <script type="text/javascript">
+        var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+        document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F405c96e7f6bed44fb846abfe1f65c6f5' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <!--底部 Google analytics访问分析代码-->
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-30952525-1']);
+        _gaq.push(['_trackPageview']);
+        setTimeout(function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? ' https://ssl' : ' http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        }, 500);
+    </script>
+</body>
+</html>
