@@ -33,59 +33,37 @@
     <!-- For all other devices -->
     <!-- Size should be 32 x 32 pixels -->
     <!-- <%= favicon_link_tag 'images/favicon.ico', :rel => 'shortcut icon' %> -->
-    <link rel="stylesheet" type="text/css" href="http://staticfile.tujia.com/portalsite2/styles/css_user?v=2.2" />
+    
+     <link rel="stylesheet" type="text/css" href="http://staticfile.tujia.com/portalsite2/styles/css_list?v=2.2" />
+
+    <script type="text/javascript" src="http://staticfile.tujia.com/PortalSite2/scripts/base/jquery.js?v=2.2"></script>
+    
+    <script type="text/javascript" src="http://staticfile.tujia.com/PortalSite2/scripts/js_list_head?v=2.2"></script>
+    <script type="text/javascript">
+        var isCityChanged = true;
+    </script>
+
+    <style type="text/css">
+      body {
+        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+      }
+    </style>
   </head>
   <body>
-
-    <div class="navbar navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container">
-          <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </a>
-          <a class="brand" href="<%= root_path %>">CanaryWeb</a>
-          <div class="container nav-collapse">
-            <ul class="nav pull-right">
-              <% if user_signed_in? %>
-                <li><%= link_to current_user.email, root_path %></li>
-                <li><%= link_to('退出',  destroy_user_session_path, :method => :delete) %></li>
-              <% else %>
-                <li><%= link_to '登录',  new_user_session_path %></li>
-                <li><%= link_to '注册',  new_user_registration_path %></li>
-              <% end %>
-            </ul>
-            <ul class="nav">
-              <li><%= link_to "Home", root_path %></li>
-              <li><%= link_to "广告位编辑", banners_path %></li>
-              <li><%= link_to "Rooms", rooms_path %></li>
-              <li><%= link_to "订单管理", orders_path %></li>
-            </ul>
-          </div><!--/.nav-collapse -->
-        </div>
-      </div>
-    </div>
-
     <div class="container">
+
+      <%= render "layouts/top" %>
+
+      <div class="container_24">
+
       <%= bootstrap_flash %>
 
       <div class="content">
         <%= yield %>
       </div><!--/content-->
+    </div>
 
-      <!-- <footer> -->
-        <div id="public_footer" class="container_24 mt20 cc pt20 pb50">
-        <div class="grid_24">
-          <a href="http://content.tujia.com/index.shtml" target="_blank" class="forst" rel="nofollow">关于我们</a>|<a href="http://content.tujia.com/business.shtml" target="_blank" rel="nofollow">业务介绍</a>|<a href="http://content.tujia.com/joinus.shtml" target="_blank" rel="nofollow">加入Canary</a>|<a href="http://content.tujia.com/help.shtml" target="_blank" rel="nofollow">帮助中心</a>|<a href="/SiteMap/UnitDestination/" target="_blank">网站地图</a>
-          <p>&copy; Copyright 2012 Canary &nbsp;&nbsp;&nbsp;&nbsp;版权所有&nbsp;&nbsp;&nbsp;&nbsp;不得转载<br /></p>  
-        </div>
-        
-      </div>
-
-      <!-- footer  End -->
-      <!-- </footer> -->
-
+    <%= render 'layouts/footer' %>
     </div> <!-- /container -->
 
     <!-- Javascripts
