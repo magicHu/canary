@@ -24,7 +24,7 @@
         <a href=<%= pay_order_path(order) %> class="button05"><strong>立即支付</strong></a><br>
       <% end %>
       <% if order.may_cancel? %>
-        <%= link_to "取消订单", cancel_order_path(order), confirm: "是否确定取消订单？" %>
+        <%= link_to "取消订单", cancel_order_path(order), confirm: "取消订单不可恢复，是否取消？" %>
       <% end %>
     </div>
   </div>
