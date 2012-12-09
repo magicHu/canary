@@ -8,4 +8,6 @@ class Room < ActiveRecord::Base
   validates :address, :desc, :name, :price, :total, :presence => true
   validates_numericality_of :price, :total, :message => "is not a number"
 
+  default_scope includes(:attachments)
+
 end
