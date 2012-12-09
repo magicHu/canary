@@ -61,6 +61,6 @@ module CanaryWeb
 
     # Time zone
     config.time_zone = 'Beijing'  
-    config.active_record.default_timezone = :Beijing  
+    config.active_record.default_timezone = :local
   end
 end

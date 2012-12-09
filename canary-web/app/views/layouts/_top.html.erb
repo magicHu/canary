@@ -498,12 +498,27 @@
 		</div>
 		<div class="grid_13 tr">
 			<div class="tel f16"><span class="f12 mr5 ft">7X24小时</span><em class="dib pr5"></em><span class="cf60">400-188-1234</span></div>
+			
 			<div class="submenu cc">
-            
-              <a href="<%= new_user_session_path %>" target="_blank" rel="nofollow" class="dib pl10 pr10">登录</a>|
+            <a href="<%= new_user_session_path %>" target="_blank" rel="nofollow" class="dib pl10 pr10">登录</a>|
               <a href="<%= new_user_registration_path %>" target="_blank" rel="nofollow" class="dib pl10 pr10">注册</a>
             |<a id="mytujiamenu" data-rel="#mytujia" href="http://www.tujia.com/UserInfo/OrderList/" target="_blank"  rel="nofollow" class="dib pl10 pr10">我的途家</a>&nbsp;&nbsp;&nbsp;|<a href="javascript:;" rel="nofollow" class="dib pl10 pr10" onclick="window.open('http://content.tujia.com/kefu.htm','_blank','height=473,width=703,fullscreen=3,top=200,left=200,status=no,toolbar=no,menubar=no,resizable=no,scrollbars=no,location=no,titlebar=no,fullscreen=no');return false;">在线客服</a><a href="http://owner.tujia.com/Customer/Land" target="_blank" class="btn dib tc p0 ovh vm"  rel="nofollow">我是业主</a>
+
+
+            <div class="btn-toolbar pull-right" style="margin: 0;">
+              <div class="btn-group open">
+                <button class="btn dropdown-toggle" data-toggle="dropdown">Canary <span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                  <li><%= link_to "Home", root_path %></li>
+	              <li><%= link_to "广告位编辑", banners_path %></li>
+	              <li><%= link_to "Rooms", rooms_path %></li>
+	              <li><%= link_to "订单管理", orders_path %></li>
+                </ul>
+              </div><!-- /btn-group -->
+            </div>
+            
 			</div>
+
 		</div>
 	</div>
 </div>
@@ -523,35 +538,3 @@
 <!-- head  End -->
 
 
-
-    
-
-    <div class="navbar navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container">
-          <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </a>
-          <a class="brand" href="<%= root_path %>">CanaryWeb</a>
-          <div class="container nav-collapse">
-            <ul class="nav pull-right">
-              <% if user_signed_in? %>
-                <li><%= link_to current_user.email, root_path %></li>
-                <li><%= link_to('退出',  destroy_user_session_path, :method => :delete) %></li>
-              <% else %>
-                <li><%= link_to '登录',  new_user_session_path %></li>
-                <li><%= link_to '注册',  new_user_registration_path %></li>
-              <% end %>
-            </ul>
-            <ul class="nav">
-              <li><%= link_to "Home", root_path %></li>
-              <li><%= link_to "广告位编辑", banners_path %></li>
-              <li><%= link_to "Rooms", rooms_path %></li>
-              <li><%= link_to "订单管理", orders_path %></li>
-            </ul>
-          </div><!--/.nav-collapse -->
-        </div>
-      </div>
-    </div>

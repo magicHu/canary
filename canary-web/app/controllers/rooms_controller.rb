@@ -2,7 +2,7 @@ class RoomsController < ApplicationController
   # GET /rooms
   # GET /rooms.json
   def index
-    @rooms = Room.all
+    @rooms = Room.page(params[:page])
 
     respond_to do |format|
       format.html # index.html.erb

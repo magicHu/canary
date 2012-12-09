@@ -7,14 +7,14 @@ class Banner < ActiveRecord::Base
   validates :title, :desc, :link, :link_text, :presence => true
   
   acts_as_list
-  default_scope :order => 'position'
+  default_scope order('position').includes(:attachment)
 
   delegate :attach, :to => :attachment, :allow_nil => true
   
   class << self
     ['onshelf', 'offshelf'].each do |state|
       define_method "all_#{state}" do
-        where('state' => state).includes(:attachment)
+        where('state' => state)
       end
     end
   end
