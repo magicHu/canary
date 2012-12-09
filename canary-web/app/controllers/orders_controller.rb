@@ -4,8 +4,10 @@ class OrdersController < ApplicationController
   def index
     if current_user
       @orders = Order.where(user_id: current_user.id)
+      @orders_unpay = Order.where(user_id: current_user.id, status: "unpay")
     else
       @orders = Order.where(user_id: nil)
+      @orders_unpay = Order.where(user_id: nil, status: "unpay")
     end
 
     respond_to do |format|
@@ -49,7 +51,7 @@ class OrdersController < ApplicationController
     @order = room.orders.build(params[:order])
     @order.user_id = current_user.id if current_user
     @order.price = room.price * @order.room_num
-    @order.status = "not check"
+    @order.status = "unpay"
 
     respond_to do |format|
       if @order.save
@@ -88,6 +90,24 @@ class OrdersController < ApplicationController
     respond_to do |format|
       format.html { redirect_to orders_url }
       format.json { head :no_content }
+    end
+  end
+
+  def cancel
+    @order = Order.find(params[:id])
+    @order.cancel! if @order.may_cancel?
+    respond_to do |format|
+      format.html { redirect_to :back, notice: 'Order was successfully cancel.' }
+      format.json { render json: @order, status: :created, location: @order }
+    end
+  end
+
+  def pay
+    @order = Order.find(params[:id])
+    @order.pay! if @order.may_pay?
+    respond_to do |format|
+      format.html { redirect_to :back, notice: 'Order was successfully pay.' }
+      format.json { render json: @order, status: :created, location: @order }
     end
   end
 end

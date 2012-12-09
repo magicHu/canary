@@ -17,7 +17,15 @@
       总房费：<span class="cf60 tahoma fb"><em class="yen">&yen;</em><%= order.price %></span><br/>订金：<span class="cf60 tahoma fb"><em class="yen">&yen;</em><%= room.price %></span>
     </div>
     <div class="grid_2">订单状态：<span class="cf60">
-      <%= order.status %></span>
+      <%= convert_status(order.status) %></span>
+    </div>
+    <div class="grid_4 omega">
+      <% if order.may_pay? %>
+        <a href=<%= pay_order_path(order) %> class="button05"><strong>立即支付</strong></a><br>
+      <% end %>
+      <% if order.may_cancel? %>
+        <%= link_to "取消订单", cancel_order_path(order), confirm: "是否确定取消订单？" %>
+      <% end %>
     </div>
   </div>
 </li>

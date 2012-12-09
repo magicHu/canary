@@ -541,22 +541,37 @@
 
     <div class="orderHead"><h4>我的订单</h4></div>
 
-    <div class="tab">
-      <ul class="tabmenu">
-        <li ><a href="javascript:;" class="current">国内订单</a></li>
-        <li><a href="/UserInfo/InternationalOrderList/">海外订单</a></li>
+    <div class="tabbable"> <!-- Only required for left/right tabs -->
+      <ul class="nav nav-tabs">
+        <li class="active"><a href="#all-orders" data-toggle="tab">全部订单</a></li>
+        <li><a href="#unpay-orders" data-toggle="tab">未付款订单</a></li>
       </ul>
+      <div class="tab-content">
+        <div class="tab-pane active" id="all-orders">
+          <ul class="orderList">
+            <% if @orders.empty? %>
+              <p>您没有的订单。</p><br>
+            <% else %>
+               <% @orders.each do |order| %>
+                 <%= render order, detail: false %>
+               <% end %> 
+            <% end %>
+          </ul>
+        </div>
+        <div class="tab-pane" id="unpay-orders">
+          <ul class="orderList">
+            <% if @orders_unpay.empty? %>
+              <p>您没有未付款的订单。</p><br>
+            <% else %>
+              <% @orders_unpay.each do |order| %>
+                <%= render order, detail: false %>
+              <% end %>
+            <% end %>
+          </ul>
+        </div>
+      </div>
     </div>
-    <div class="formBox">
-      <input type="radio" name="order" id="arr" link="/orders" checked/><label for="arr">全部订单</label>
-      <input type="radio" name="order" id="theUnfinished" link="/orders?status=uncheck"  /><label for="theUnfinished">未付款订单</label>
-    </div>
-
-    <ul class="orderList">
-      <% @orders.each do |order| %>
-      <%= render order, detail: false %>
-      <% end %>
-    </ul>
+    
     <div class="pages">
       <!--MvcPager 1.5 for ASP.NET MVC 3.0 © 2009-2011 Webdiyer (http://www.webdiyer.com)-->
     </div>

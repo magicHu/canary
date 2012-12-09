@@ -1,6 +1,11 @@
 CanaryWeb::Application.routes.draw do
   
-  resources :orders
+  resources :orders do
+    member do
+      match 'pay'
+      match 'cancel'
+    end
+  end
 
   resources :room_resources
 
