@@ -39,6 +39,9 @@ gem 'aasm'
 # Tag
 gem 'acts-as-taggable-on', '~> 2.3.1'
 
+# comment
+gem 'acts_as_commentable', '3.0.1'
+
 # 禁用 assets 日志
 gem 'quiet_assets', "~> 1.0.1"
 
