@@ -337,7 +337,8 @@
 	</div>
 </div>
 <div class="grid_5 alpha tr" id="viewTypeArea">
-    
+    <%= link_to "New", new_room_path, :class => 'btn btn-primary' %>
+
     <a href="/xiamen_gongyu/l2d319/"><em class="ico_map" title="地图模式"></em><b>地图</b></a>
     
       <a href="javascript:void(0)" class="current"><em class="ico_list" title="列表模式"></em><b>列表</b></a>
@@ -346,130 +347,8 @@
 </div>
 
 <div id="scr_list_box" class="grid_24">
-
-<div class="ptList ovh c9">
-	<div class="grid_4 alpha pt10">
-        <a target="_blank" href="/xiamen_gongyu/huliqu_2271.htm" class="pic" rel="nofollow"><img src="http://staticfile.tujia.com/upload/unit/day_121025/Thumb/2012102505410828_150_110.jpg"  alt="厦门湖里区万达广场公寓经典中式商务房" title="万达广场公寓经典中式商务房" /></a>
-        <p><label><input type="checkbox" disabled="disabled" data-compare-btn="true"  name="db_2271_n" id="db_2271_id" data-imghref="http://staticfile.tujia.com/upload/unit/day_121025/Thumb/2012102505410828_150_110.jpg" data-housename="万达广场公寓经典中式商务房" data-houselink="/xiamen_gongyu/huliqu_2271.htm" style=" vertical-align: middle" />  <span style=" vertical-align: middle">对比</span></label></p>
-    </div>
-	<div class="grid_11 pt10">
-		<dl class="dlWrapper" lng="118.182691" lat="24.511606">  
-			<dt class=" pl10 f14"><a target="_blank" href="/xiamen_gongyu/huliqu_2271.htm" class="fb">万达广场公寓经典中式商务房</a>
-                <img src="http://staticfile.tujia.com/portalsite2/images/jieji.png" alt="免费接机" width="72" height="16" class="vb pb2 ml5"  />
-                
-            </dt>
-            
-			<dd class="address pl10 pt2 c9">厦门市湖里区万达广场06-11片区仙岳路与金山路交叉口东南侧<a  target="_blank" href="/xiamen_gongyu/huliqu_2271.htm?tabto=map" ref="http://api.map.baidu.com/staticimage?zoom=15&markers=118.182691,24.511606&width=234&height=234&markerStyles=m, ,&pic=mappic.png"  class="dib ml10" rel="nofollow">[地图]</a></dd>
-			<dd class="info cc pl5"><span class="pl5 pr5 c3">平层</span>| <span class="pl5 pr5 c3">1室1卫</span>|<span class="pl5 pr5 c3">42平米 </span>|<span class="pl5 pr5 c3">床数<strong class="cf60 ft fb">1</strong></span>|<span class="pl5 pr5 c3">推荐入住<strong class="cf60 ft fb">2</strong>人</span></dd>
-			<dd class="tags pl5">
-                
-                    <a href="/xiamen_gongyu/t12/" class="pl5 pr5" rel="nofollow">中式风格</a>
-                  
-                    <a href="/xiamen_gongyu/t22/" class="pl5 pr5" rel="nofollow">超高层</a>
-                  
-                    <a href="/xiamen_gongyu/t23/" class="pl5 pr5" rel="nofollow">开放式</a>
-                  
-                    <a href="/xiamen_gongyu/t71/" class="pl5 pr5" rel="nofollow">养生休闲</a>
-                  
-            </dd>
-		</dl>
-	</div>
-	<div class="grid_4 alpha omega pt5">
-    <span class="ompanylogo">
-    <a href="/Hotel/Index/238/" target="_blank">斯维登</a><img src="http://staticfile.tujia.com/upload/hotelmanagementcompany/day_120906/201209061007071174.png" alt="" title=""  class="sweetome" />
-    <span class="hotelname pt10 db">
-        <div class="ratetootltip">
-            <div class="commentsContent">
-                
-                <div class="commentsEvaluation">途家厦门管理公司综合评分（共有11条点评）：</div>
-                <div class="commentsResults">
-                    <span class="ratyspan" data-rating="5"></span>
-                    <span  class="fGeorgia">4.6</span>
-                    <span class="t">&nbsp;分<em>(满分5分)</em></span>
-                </div>
-                <div class="commentScores">
-                    <p><span>卫生：<strong>4.8</strong>分</span><span>管理服务：<strong>4.8</strong>分</span></p>
-                </div>
-                
-                
-                
-                 <p id="tooltipSweetome">· 五星级酒店客房用品<br />· 专业团队一站式服务</p>
-                
-            </div>
-         </div>
-        </span>
-        </span>
-    </div>
-	<div class="grid_5 fr alpha omega tr">
-		<div>
-        
-                <em class="yen">&yen;</em> <span class="Price" id="house_price_db_2271_id">248</span>&nbsp;&nbsp;每晚<br />
-              
-                <a target="_blank" href="/xiamen_gongyu/huliqu_2271.htm?s=false&to=hui" tip-data="2012-11-02至2012-12-31期间入住，享受[218元]特价。;2012-11-26至2013-02-28期间入住，[预订即可享受免费土楼门票一张]。" class="promotion" rel="nofollow"><img src="http://staticfile.tujia.com/portalsite2/images/ico05.png" alt="" class="vm" /></a>   <br />
-                   
-           <a href="/xiamen_gongyu/huliqu_2271.htm" target="_blank" rel="nofollow" class="button button-01 mt5">详情</a>
-        
-        </div>
-	</div>
-</div>
-
-
-<%- model_class = Room -%>
-<div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
-</div>
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th><%= model_class.human_attribute_name(:name) %></th>
-      <th><%= model_class.human_attribute_name(:address) %></th>
-      <th><%= model_class.human_attribute_name(:desc) %></th>
-      <th><%= model_class.human_attribute_name(:total) %></th>
-      <th><%= model_class.human_attribute_name(:price) %></th>
-      <th>Photos</th>
-      <th><%=t '.actions', :default => t("helpers.actions") %></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @rooms.each do |room| %>
-      <tr>
-        <td><%= room.name %></td>
-        <td><%= room.address %></td>
-        <td><%= room.desc %></td>
-        <td><%= room.total %></td>
-        <td><%= room.price %></td>
-        <td>
-          <% room.attachments.each do |attachment| %>
-            <%= image_tag(attachment.attach.thumb) %>
-          <% end %>
-        </td>
-        <td>
-          <%= link_to '预订',  new_room_order_path(room), :class => 'btn btn-success'%>
-          <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_room_path(room), :class => 'btn btn-mini' %>
-          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                      room_path(room),
-                      :method => :delete,
-                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                      :class => 'btn btn-mini btn-danger' %>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<%= link_to t('.new', :default => t("helpers.links.new")),
-            new_room_path,
-            :class => 'btn btn-primary' %>
-
-<%= paginate @rooms %>
-
-<div class="grid_24" id="pages">
-
-<!--MvcPager 1.5 for ASP.NET MVC 3.0 © 2009-2011 Webdiyer (http://www.webdiyer.com)-->
-<div class="pages"><span class='selected'>1</span><a href='/xiamen_gongyu/d319/2/'>2</a><a href='/xiamen_gongyu/d319/3/'>3</a><a href='/xiamen_gongyu/d319/2/'>下一页</a><a href='/xiamen_gongyu/d319/3/'>尾页</a></div>
-<!--MvcPager 1.5 for ASP.NET MVC 3.0 © 2009-2011 Webdiyer (http://www.webdiyer.com)-->
-
+    <%= render @rooms %>
+    <%= paginate @rooms %>
 </div>
 
 </div>
