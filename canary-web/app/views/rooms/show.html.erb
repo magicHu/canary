@@ -1,29 +1,454 @@
-<%- model_class = Room -%>
-<div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+<link rel="stylesheet" type="text/css" href="http://staticfile.tujia.com/portalsite2/styles/css_detail?v=2.2" />
+
+<script type="text/javascript" src="http://staticfile.tujia.com/PortalSite2/scripts/js_detail_head?v=2.2"></script>
+
+
+<div id="mytujia" class="dn tl">
+    <ul>
+        <li><a href="http://www.tujia.com/UserInfo/OrderList/" target="_blank"  rel="nofollow" class=" lh24 pl10">我的订单</a></li>
+        <li><a href="http://www.tujia.com/UserInfo/CommentList/" target="_blank"  rel="nofollow" class=" lh24 pl10">我的点评</a></li>
+        <li><a href="http://www.tujia.com/UserInfo/Info/" target="_blank"  rel="nofollow" class=" lh24 pl10">个人资料</a></li>
+        <li><a href="http://www.tujia.com/UserInfo/Credits/" target="_blank"  rel="nofollow" class=" lh24 pl10">我的积分</a></li>
+    </ul>
+</div>
+<div id="menuCity" data-rel="#changeCity">
+    <ul>
+      <li><a href="http://international.tujia.com">海外站</a></li>
+    </ul>
+</div>
+<!-- head  End -->
+
+
+
+    
+<!-- dir Start -->
+<div class="container_24">
+  <div class="grid_24"  id="dir">
+    <span>房屋编号：<strong>399</strong></span>
+    <a href="http://www.tujia.com">国内站</a><em>&gt;</em>
+    <a href="/hangzhou_gongyu/">杭州</a><em>&gt;</em>
+    <a href="/hangzhou_gongyu/xihu_s13/">西湖</a><em>&gt;</em>房屋详情
+  </div>
+</div>
+<!-- dir  End -->
+
+<div class="container_24" id="detail_wrapper">
+  <div class="grid_17 c3" id="main">
+
+    <!-- title  Start -->
+    <div class="info pt10 pr">
+      <div class="houseTitle clearfix pt10 pb10">
+        <h1 class="fl mr10 di f24 fn"><%= @room.name %></h1>
+        <span class="f24 c9"></span>
+      </div>
+
+      <p class="c9">
+        地址：@room.address
+        <a href="javascript:void(0)" class="switchToMap dib mr20">[位置地图]</a>
+        <br />
+
+        <span class="pr10 c3">别墅</span>|
+        <span class="pl10 pr10 c3">1室1厅1卫</span>|
+        <span class="pl10 pr10 c3">25平米</span>|
+        <span class="pl10 pr10 c3">床数<strong>1</strong></span>|
+        <span class="pl10 pr10 c3">推荐入住<strong class="ft fb cf60">2</strong>人</span>
+      </p>
+    </div>
+    <!-- title  End -->
+        
+    <div >
+    <!-- tab  Start -->
+    <div class="tabbable"> <!-- Only required for left/right tabs -->
+      <ul class="nav nav-tabs">
+        <li class="active"><a href="#room-photos" data-toggle="tab">房屋照片</a></li>
+        <li><a href="#room-map" data-toggle="tab">位置地图</a></li>
+      </ul>
+      <div class="tab-content">
+        <div class="tab-pane active" id="room-photos">
+          <div id="myCarousel" class="carousel slide">
+            <div class="carousel-inner">
+              <% @room.attachments.each do |attachment| %>
+                <div class="item">
+                  <%= image_tag(attachment.attach.url) %>
+                </div>
+              <% end %>
+            </div>
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
+            <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
+          </div>
+        </div>
+        <div class="tab-pane" id="room-map">
+          <div class="map">
+              <div id="mapPanel" style="width:670px; height:390px;"></div>
+              <div>
+                  <div id="mapIconInfo" style="margin-top:10px">
+                     
+                     
+                      
+                        <div class="mapitem" lng="120.106393" lat="30.245299" address="杭州市西湖景区隐居西湖">
+                          <div class="icon" id="icon0"></div>
+                          <div class="text">房屋位置</div>
+                        </div>
+                      
+                      <div style="clear:both"></div>
+                  </div>
+                  <ul id="nearby" class="dn" lng="120.106393" lat="30.245299">
+                      
+                  </ul>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- tab  End -->
+
+    <div class="tab">
+      <ul class="menu" id="tab_list_02_meun">
+        <li class="current"><a href="javascript:;">房屋介绍</a></li>
+        <li><a href="javascript:;">小区介绍</a></li>
+        <li><a href="javascript:;">周边介绍</a></li>
+      </ul>
+      <div id="tab_list_02_box" class="pt20">
+                
+        <div class="tabContent dn clearfix">
+        <!-- 房屋介绍  Start -->
+          <div class="grid_11 alpha omega c3">
+                        
+            <strong class="tabTitle db">上天竺水闻道佛缘套房&nbsp;&nbsp;&nbsp;&nbsp;房屋介绍</strong>
+            <div class="text">
+                <p>水闻道别墅为新中式风格，略带唐式复古风。三幢别墅正对上天竺法喜寺，上香或游览都只是抬步即至的距离。&nbsp;<p><br/></p>水闻道的房间布置营造出空灵、简朴的禅意空间，再加上柔软的床品，一定会让住客的心灵维持在一份舒适宁静悠远的意境当中！<p><br/></p>套房（闻凡）功能完善，带有浴缸。将“禅宗”理念纳入酒店的设计构思，创造空灵、简朴的禅意空间。卧房犹如喧哗城市中宁静的角落，跳跃音符中蕴藏的恬静韵律，将自然、健康、禅意融入到品质生活中。在客房中，柔软的床品、精致的小物件和谐自然，一花一世界、一叶一菩提，心心念念都是悠然的智慧。</p>
+                            
+            </div>
+                        
+            <div class="facilities mt10">
+              <dl class="dlBox ">
+                <dt>房间设施</dt>
+                
+                                <dd class="pt10 pb20 pl20 ovh">
+                                                                               
+                       <span class="none dib mr10 pl20">空调</span>
+                                                                              
+                       <span class="none dib mr10 pl20">电冰箱</span>
+                                                                              
+                       <span class="has_not dib mr10 pl20">洗衣机</span>
+                                                                              
+                       <span class="none dib mr10 pl20">浴缸</span>
+                                                                              
+                       <span class="none dib mr10 pl20">大床</span>
+                                                                              
+                       <span class="has_not dib mr10 pl20">单人床</span>
+                                                                              
+                       <span class="has_not dib mr10 pl20">榻榻米</span>
+                                                                              
+                       <span class="has_not dib mr10 pl20">圆床</span>
+                                                                              
+                       <span class="none dib mr10 pl20">吸烟</span>
+                                                                              
+                       <span class="has_not dib mr10 pl20">带宠物</span>
+                                                                              
+                       <span class="has_not dib mr10 pl20">做饭</span>
+                                                                              
+                       <span class="none dib mr10 pl20">聚会</span>
+                                                                              
+                       <span class="none dib mr10 pl20">宽带</span>
+                                                                              
+                       <span class="none dib mr10 pl20">有线电视</span>
+                                                                              
+                       <span class="none dib mr10 pl20">全天热水</span>
+                                                                              
+                       <span class="has_not dib mr10 pl20">电梯</span>
+                                                                              
+                       <span class="has_not dib mr10 pl20">门禁</span>
+                                       
+                  </dd>
+              </dl>
+              <div class="tableBox">
+                <table>
+                  <thead>
+                    <tr>
+                      <th class="fb tl">位置</th>
+                      <th class="fb tl">物品名称</th>
+                      <th class="fb tl">规格</th>
+                      <th class="fb tl">数量</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                                                                      
+                        <tr>
+                          <td class="tl">客厅</td>
+                          <td class="tl">电视机</td>
+                          <td class="tl">液晶</td>
+                          <td class="tl"> 1</td>
+                        </tr>
+                                                                             
+                        <tr>
+                          <td class="tl">客厅</td>
+                          <td class="tl">空调</td>
+                          <td class="tl"></td>
+                          <td class="tl"> 1</td>
+                        </tr>
+                                                                             
+                        <tr>
+                          <td class="tl">客厅</td>
+                          <td class="tl">沙发</td>
+                          <td class="tl"></td>
+                          <td class="tl"> 1</td>
+                        </tr>
+                                                                             
+                        <tr>
+                          <td class="tl">客厅</td>
+                          <td class="tl">餐桌</td>
+                          <td class="tl"></td>
+                          <td class="tl"> 1</td>
+                        </tr>
+                                                                             
+                        <tr>
+                          <td class="tl">卧室</td>
+                          <td class="tl">电视机</td>
+                          <td class="tl">液晶</td>
+                          <td class="tl"> 1</td>
+                        </tr>
+                                                                             
+                        <tr>
+                          <td class="tl">卧室</td>
+                          <td class="tl">空调</td>
+                          <td class="tl"></td>
+                          <td class="tl"> 1</td>
+                        </tr>
+                                                                             
+                        <tr>
+                          <td class="tl">卧室</td>
+                          <td class="tl">电冰箱</td>
+                          <td class="tl"></td>
+                          <td class="tl"> 1</td>
+                        </tr>
+                                                                             
+                        <tr>
+                          <td class="tl">卧室</td>
+                          <td class="tl">衣柜</td>
+                          <td class="tl"></td>
+                          <td class="tl"> 1</td>
+                        </tr>
+                                                                             
+                        <tr>
+                          <td class="tl">卧室</td>
+                          <td class="tl">大床</td>
+                          <td class="tl">2X1.8米</td>
+                          <td class="tl"> 1</td>
+                        </tr>
+                                                                             
+                        <tr>
+                          <td class="tl">卫生间</td>
+                          <td class="tl">热水器</td>
+                          <td class="tl"></td>
+                          <td class="tl"> 1</td>
+                        </tr>
+                                                                             
+                        <tr>
+                          <td class="tl">卫生间</td>
+                          <td class="tl">浴缸</td>
+                          <td class="tl"></td>
+                          <td class="tl"> 1</td>
+                        </tr>
+                                            
+                  </tbody>
+                </table>  
+              </div>
+            </div>
+                        
+          </div>
+                    
+          <div class="grid_6">
+            <div class="basicInfo">
+                            <strong class="tableTitle">基本信息</strong>
+                            <table>
+                  <tr>
+                    <td class="l">类型：</td>
+                    <td class="r"><a href="/hangzhou_gongyu/h12/" target="_blank">别墅</a></td>
+                  </tr>
+                  <tr>
+                    <td class="l">景观：</td>
+                    <td class="r">
+                                            
+                                                <a href="/hangzhou_gongyu/v1/" target="_blank">
+                                                        山景</a>
+                                              
+                                       </td>
+                  </tr>                       
+                  <tr>
+                    <td class="l">房型：</td>
+                    <td class="r"><a href="/hangzhou_gongyu/h1/" target="_blank">1室1厅1卫</a></td>
+                  </tr>
+                                    <tr>
+                    <td class="l">面积：</td>
+                    <td class="r">25平米</td>
+                  </tr>
+                                    
+                                    <tr>
+                    <td class="l">楼层：</td>
+                    <td class="r">1-3</td>
+                  </tr>
+                                    
+                  <tr>
+                    <td class="l">可住：</td>
+                    <td class="r">2人 (不可加床)</td>
+                  </tr>
+                  <tr>
+                    <td class="l vt">物业：</td>
+                    <td class="r "><span>隐居西湖</span></td>
+                  </tr>
+                </table>
+            </div>
+            <div class="serviceList mt10">
+                            <strong class="tableTitle">提供服务</strong>
+              <ul class="clearfix">
+            
+                                  
+                                        <li class="none">行李存放</li>
+                                        
+                                        <li class="none">叫醒服务</li>
+                                        
+                                        <li class="none">婚宴服务</li>
+                                        
+                                        <li class="none">楼层管家</li>
+                                        
+                                        <li class="li-boredr-none">外送洗衣</li>
+                                        
+                                        <li class="li-boredr-none">旅游票务</li>
+                                        
+
+              </ul>
+            </div>
+
+                          <div class="serviceList mt10">
+                            <strong class="tableTitle">房屋特色</strong>
+              <ul class="clearfix">
+                                  
+                                     <li class="none"><a href="/hangzhou_gongyu/t6/" target="_blank">山景</a></li>
+                                      
+                                     <li class="none"><a href="/hangzhou_gongyu/t12/" target="_blank">中式风格</a></li>
+                                      
+                                     <li class="none"><a href="/hangzhou_gongyu/t28/" target="_blank">联排别墅</a></li>
+                                      
+                                     <li class="none"><a href="/hangzhou_gongyu/t38/" target="_blank">大浴缸</a></li>
+                                      
+                                     <li class="li-boredr-none"><a href="/hangzhou_gongyu/t43/" target="_blank">书房</a></li>
+                                     
+
+              </ul>
+            </div>
+                         
+          </div>
+                    
+        </div>
+                
+        <!-- 房屋介绍  End -->
+        <!-- 小区介绍  Start -->
+                
+        <div class="tabContent dn clearfix"  >
+          <div class="grid_11 alpha omega c3">
+                        <strong class="tabTitle db">隐居西湖&nbsp;&nbsp;&nbsp;&nbsp;小区介绍</strong>
+            <div class="text">
+                   
+                <img src="http://staticfile.tujia.com/upload/residentialquarter/day_120401/201204010322551448.gif" class="Img mb20" alt="隐居西湖小区示意图"/>
+                                
+                <p>隐居西湖有多个片区，包括“白乐桥”“上天竺”“上满觉陇”！<p><br/></p>白&nbsp;乐&nbsp;桥&nbsp;：&nbsp;在西湖游荡&nbsp;在地中海休憩&nbsp;<br />白乐桥片区位于灵隐寺的后门，住在别墅酒店内，开车或散步至灵隐寺都很便捷，想至北高峰财神庙求支上上签亦是个把小时即可完成的活动。&nbsp;<br />通过庭院、多功能客厅、儿童游乐区及餐厅等功能区域的整体配套，赋予了白乐桥片区丰富的容纳性，无论是家庭客户、或是企业客户都能在此获得超额的性价比及各种满足自身需求的体验形式！<p><br/></p>上&nbsp;天&nbsp;竺&nbsp;：&nbsp;取舍在繁华与幽静间，悠然于自然与禅境处&nbsp;<br />越语禅、水闻道、一叶闲三幢别墅酒店连成一体，以新中式风格为主，略带唐式复古风。三幢别墅正对上天竺法喜寺，上香或游览都只是抬步即至的距离。&nbsp;<br />每幢别墅各含两到三间套房（含佛缘套房、禅意套房等），最适合家庭聚会。室内公共空间有客厅、餐厅、会客室、禅房等，室外庭院幽静。可为各类佛事活动（佛诞日、菩萨寿诞、上香祈福等）提供便利，同时可承办各类家庭及私人聚会、企业高端活动及宴会等。&nbsp;<br />上天竺餐厅以佛缘菜为主，所有材料均为当季新鲜时蔬，取材于绿色农庄，确保绿色、健康。&nbsp;<p><br/></p>上满觉陇：&nbsp;终日错错碎梦间，偷得浮生半日闲。&nbsp;<br />倚华浓、醉翰林两幢别墅酒店采用美式建筑风格，附带有一体化美式庭院、茶座等。二幢独立别墅皆处于满陇桂雨中，八月桂花飘香时节，庭院树下饮茶最是惬意。&nbsp;<br />倚华浓、醉翰林别墅酒店各有11间客房（含豪华套房、亲子套房、标准间及大床房）。室内公共交流空间有客厅、厨房、餐厅、多功能室、游乐区等，户外庭院环绕而成，既可小憩，也可承办各类家庭聚会、烧烤派对、企业商务活动（如发布会、鉴赏会、中高层会务及培训等）、个性私家婚礼等主题活动及宴会。&nbsp;<br />
+                </p>
+            </div>
+            <dl class="dlList">
+              <dt class="pt10  fb f14">交通</dt>
+              <dd>萧山机场距离各片区距离<br />白乐桥：车程38.6公里，搭乘出租正常1小时5分钟可到酒店，正常费用为136元；<br />上满觉陇：车程35.2公里，搭乘出租正常1小时可到酒店，正常费用为&nbsp;124&nbsp;元；<br />上天竺：车程44.2&nbsp;&nbsp;公里，搭乘出租正常&nbsp;1小时17&nbsp;分钟可到酒店，正常费用为&nbsp;157&nbsp;元；<p><br/></p>城战火车站距离各片区距离：<br />白乐桥：车程10.2&nbsp;公里，搭乘出租正常&nbsp;40&nbsp;分钟可到酒店，正常费用为&nbsp;30&nbsp;元；<br />上满觉陇：车程9.1公里，搭乘出租正常&nbsp;35分钟可到酒店，正常费用为&nbsp;27&nbsp;元；<br />上天竺：车程12.5公里，搭乘出租正常&nbsp;55&nbsp;分钟可到酒店，正常费用为&nbsp;38&nbsp;元；<p><br/></p>武林广场（市区）距离各片区距离：<br />白乐桥：车程8.2公里，搭乘出租正常&nbsp;32分钟可到酒店，正常费用为&nbsp;24&nbsp;元；<br />上满觉陇：车程11公里，搭乘出租正常&nbsp;40分钟可到酒店，正常费用为&nbsp;33&nbsp;元；<br />上天竺：车程10.3公里，搭乘出租正常&nbsp;46&nbsp;分钟可到酒店，正常费用为&nbsp;30&nbsp;元；</dd>
+              <dt class="pt10  fb f14">特色</dt>
+              <dd>白乐桥&nbsp;：地中海、东南亚；上天竺&nbsp;：中式；上满觉陇&nbsp;：美式；</dd>
+              <dt class="pt10  fb f14">安保措施</dt>
+              <dd></dd>
+            </dl>
+            <div class="facilities mt20">
+              <dl class="dlBox">
+                <dt class="fb f14">小区设施</dt>
+                <dd  class="pt10 pb20 pl20 ovh">
+                                    <span class='has_not dib mr10 pl20'>游泳池</span>
+                                    <span class='has_not dib mr10 pl20'>便利店</span>
+                                    <span class='none dib mr10 pl20'>停车位</span>
+                                    <span class='has_not dib mr10 pl20'>温泉</span>
+                                    <span class='has_not dib mr10 pl20'>健身设施</span>
+                                    <span class='has_not dib mr10 pl20'>会所</span>
+                </dd>
+              </dl>
+            </div>
+                         
+          </div>
+          <div class="grid_6">
+            <div class="basicInfo">
+                           <strong class="tableTitle">小区信息</strong>
+              <table>
+                <tr>
+                  <td class="l">建成年份：</td>
+                  <td class="r">2011</td>
+                </tr>
+                <tr>
+                  <td class="l">绿化率：</td>
+                  <td class="r">0%</td>
+                </tr>
+                <tr>
+                  <td class="l">开发商：</td>
+                  <td class="r">隐居西湖</td>
+                </tr>
+                <tr>
+                  <td class="l">物业：</td>
+                  <td class="r">隐居西湖</td>
+                </tr>
+                <tr>
+                  <td class="l">停车费：</td>
+                  <td class="r">免费停车场</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+                    <div id="cellImg" class="grid_17 mt20">
+                            <strong class="tabTitle db">小区图片</strong>
+                                    
+                                <ul class="clearfix">
+                                    
+                                </ul>
+                                <p><span class="red">↑</span> 点击小图查看大图</p>    
+                                  
+                                
+          
+            </div>
+        </div>
+                 
+        <!-- 小区介绍  End -->
+        <!-- 周边介绍  Start -->
+                
+        <div class="tabContent" style="display:block;">
+                     <strong class="tabTitle db">上天竺水闻道佛缘套房&nbsp;&nbsp;&nbsp;&nbsp;周边环境</strong>
+           <div class="text">                      
+                
+                <img src="http://staticfile.tujia.com/upload/residentialquarter/day_120401/201204010234313084.gif" alt="周边介绍图"/>
+                                
+              <p>
+                                灵隐寺——车程0.72公里（白乐桥）<br />中国佛教著名寺院，又名云林寺，位于浙江省杭州市西湖西北面，在飞来峰与北高峰之间灵隐山麓中，两峰挟峙，林木耸秀，深山古寺，云烟万状，是一处古朴幽静、景色宜人的游览胜地，也是江南著名古刹之一。<p><br/></p>法喜寺——车程0.05公里（上天竺）<br />法喜寺即是以灵感观音名闻江南，以至历朝历届杭州知州必定参拜。距今已有1千多年历史，与法净寺、法镜寺合称天竺三寺。<p><br/></p>法净寺——车程1.6公里（上天竺）<br />法净寺距今已有1千多年历史，与法喜寺、法镜寺合称天竺三寺。<p><br/></p>水乐洞——车程0.63公里（上满觉陇）<br />烟霞三洞之一，位于南高峰下的烟霞岭上。路边桂树林立，中秋时分，金桂飘香，游人可在桂树旁品茗小坐，极具佳趣。水乐洞深60多米，洞口有清泉流出，声如金石，十分悦耳。两旁石壁上有“天然琴声”、“听无弦琴”等石刻，在洞内到处可听见水声，但见不到水，直至洞口才见清泉如注。洞底原有梁山伯、祝英台石像两座。另有一石，用杖一击，声如古琴，很是奇妙。
+                            </p>
+          </div>    
+        </div>
+                
+        <!-- 周边介绍  End -->
+      </div>
+    </div>
+        </div>
+        
+
+        <div id="loading" class="dn"><img src='http://staticfile.tujia.com/Common/images/loader.gif'/>正在加载点评数据，请稍侯......</div>
+        <a name="comment" id="comment" href="#comment"></a>
+
+    <div id="commentPanel">
+        <form action="/UnitDetail/Log/" data-ajax="true" data-ajax-method="Post" id="logForm" method="post"><input id="unitId" name="unitId" type="hidden" value="399" />
+            </form>
+
+        <%= render 'comments' %>
+    </div>
+  </div>
 </div>
 
-<dl class="dl-horizontal">
-  <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
-  <dd><%= @room.name %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:address) %>:</strong></dt>
-  <dd><%= @room.address %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:desc) %>:</strong></dt>
-  <dd><%= @room.desc %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:total) %>:</strong></dt>
-  <dd><%= @room.total %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:price) %>:</strong></dt>
-  <dd><%= @room.price %></dd>
-</dl>
-
-<div class="form-actions">
-  <%= link_to t('.back', :default => t("helpers.links.back")),
-              rooms_path, :class => 'btn'  %>
-  <%= link_to t('.edit', :default => t("helpers.links.edit")),
-              edit_room_path(@room), :class => 'btn' %>
-  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-              room_path(@room),
-              :method => 'delete',
-              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-              :class => 'btn btn-danger' %>
-</div>
+<% render 'order' %>
