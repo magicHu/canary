@@ -14,6 +14,8 @@ class RoomsController < ApplicationController
   # GET /rooms/1.json
   def show
     @room = Room.find(params[:id])
+    @order = @room.orders.build
+    @comment = @room.comments.build
 
     respond_to do |format|
       format.html # show.html.erb

@@ -58,7 +58,7 @@
         
     <div >
     <!-- tab  Start -->
-    <div class="tabbable"> <!-- Only required for left/right tabs -->
+    <div class="tabbable">
       <ul class="nav nav-tabs">
         <li class="active"><a href="#room-photos" data-toggle="tab">房屋照片</a></li>
         <li><a href="#room-map" data-toggle="tab">位置地图</a></li>
@@ -82,9 +82,6 @@
               <div id="mapPanel" style="width:670px; height:390px;"></div>
               <div>
                   <div id="mapIconInfo" style="margin-top:10px">
-                     
-                     
-                      
                         <div class="mapitem" lng="120.106393" lat="30.245299" address="杭州市西湖景区隐居西湖">
                           <div class="icon" id="icon0"></div>
                           <div class="text">房屋位置</div>
@@ -93,7 +90,6 @@
                       <div style="clear:both"></div>
                   </div>
                   <ul id="nearby" class="dn" lng="120.106393" lat="30.245299">
-                      
                   </ul>
               </div>
           </div>
@@ -102,18 +98,14 @@
     </div>
     <!-- tab  End -->
 
-    <div class="tab">
-      <ul class="menu" id="tab_list_02_meun">
-        <li class="current"><a href="javascript:;">房屋介绍</a></li>
-        <li><a href="javascript:;">小区介绍</a></li>
-        <li><a href="javascript:;">周边介绍</a></li>
+    <div class="tabbable">
+      <ul class="nav nav-tabs">
+        <li class="active"><a href="#room-desc" data-toggle="tab">房屋介绍</a></li>
+        <li><a href="#residential-desc" data-toggle="tab">小区介绍</a></li>
+        <li><a href="#related-desc" data-toggle="tab">周边介绍</a></li>
       </ul>
-      <div id="tab_list_02_box" class="pt20">
-                
-        <div class="tabContent dn clearfix">
-        <!-- 房屋介绍  Start -->
-          <div class="grid_11 alpha omega c3">
-                        
+      <div class="tab-content">
+        <div class="tab-pane active" id="room-desc">
             <strong class="tabTitle db">上天竺水闻道佛缘套房&nbsp;&nbsp;&nbsp;&nbsp;房屋介绍</strong>
             <div class="text">
                 <p>水闻道别墅为新中式风格，略带唐式复古风。三幢别墅正对上天竺法喜寺，上香或游览都只是抬步即至的距离。&nbsp;<p><br/></p>水闻道的房间布置营造出空灵、简朴的禅意空间，再加上柔软的床品，一定会让住客的心灵维持在一份舒适宁静悠远的意境当中！<p><br/></p>套房（闻凡）功能完善，带有浴缸。将“禅宗”理念纳入酒店的设计构思，创造空灵、简朴的禅意空间。卧房犹如喧哗城市中宁静的角落，跳跃音符中蕴藏的恬静韵律，将自然、健康、禅意融入到品质生活中。在客房中，柔软的床品、精致的小物件和谐自然，一花一世界、一叶一菩提，心心念念都是悠然的智慧。</p>
@@ -255,9 +247,7 @@
                 </table>  
               </div>
             </div>
-                        
-          </div>
-                    
+                      
           <div class="grid_6">
             <div class="basicInfo">
                             <strong class="tableTitle">基本信息</strong>
@@ -337,17 +327,15 @@
 
               </ul>
             </div>
-                         
+        </div>       
           </div>
-                    
-        </div>
-                
+               
         <!-- 房屋介绍  End -->
+        <div class="tab-pane" id="residential-desc">
+          
         <!-- 小区介绍  Start -->
                 
-        <div class="tabContent dn clearfix"  >
-          <div class="grid_11 alpha omega c3">
-                        <strong class="tabTitle db">隐居西湖&nbsp;&nbsp;&nbsp;&nbsp;小区介绍</strong>
+          <strong class="tabTitle db">隐居西湖&nbsp;&nbsp;&nbsp;&nbsp;小区介绍</strong>
             <div class="text">
                    
                 <img src="http://staticfile.tujia.com/upload/residentialquarter/day_120401/201204010322551448.gif" class="Img mb20" alt="隐居西湖小区示意图"/>
@@ -377,7 +365,6 @@
               </dl>
             </div>
                          
-          </div>
           <div class="grid_6">
             <div class="basicInfo">
                            <strong class="tableTitle">小区信息</strong>
@@ -405,49 +392,68 @@
               </table>
             </div>
           </div>
-                    <div id="cellImg" class="grid_17 mt20">
+          <div id="cellImg" class="grid_17 mt20">
                             <strong class="tabTitle db">小区图片</strong>
                                     
                                 <ul class="clearfix">
                                     
                                 </ul>
                                 <p><span class="red">↑</span> 点击小图查看大图</p>    
-                                  
-                                
-          
-            </div>
         </div>
-                 
         <!-- 小区介绍  End -->
-        <!-- 周边介绍  Start -->
-                
-        <div class="tabContent" style="display:block;">
-                     <strong class="tabTitle db">上天竺水闻道佛缘套房&nbsp;&nbsp;&nbsp;&nbsp;周边环境</strong>
-           <div class="text">                      
-                
-                <img src="http://staticfile.tujia.com/upload/residentialquarter/day_120401/201204010234313084.gif" alt="周边介绍图"/>
-                                
-              <p>
-                                灵隐寺——车程0.72公里（白乐桥）<br />中国佛教著名寺院，又名云林寺，位于浙江省杭州市西湖西北面，在飞来峰与北高峰之间灵隐山麓中，两峰挟峙，林木耸秀，深山古寺，云烟万状，是一处古朴幽静、景色宜人的游览胜地，也是江南著名古刹之一。<p><br/></p>法喜寺——车程0.05公里（上天竺）<br />法喜寺即是以灵感观音名闻江南，以至历朝历届杭州知州必定参拜。距今已有1千多年历史，与法净寺、法镜寺合称天竺三寺。<p><br/></p>法净寺——车程1.6公里（上天竺）<br />法净寺距今已有1千多年历史，与法喜寺、法镜寺合称天竺三寺。<p><br/></p>水乐洞——车程0.63公里（上满觉陇）<br />烟霞三洞之一，位于南高峰下的烟霞岭上。路边桂树林立，中秋时分，金桂飘香，游人可在桂树旁品茗小坐，极具佳趣。水乐洞深60多米，洞口有清泉流出，声如金石，十分悦耳。两旁石壁上有“天然琴声”、“听无弦琴”等石刻，在洞内到处可听见水声，但见不到水，直至洞口才见清泉如注。洞底原有梁山伯、祝英台石像两座。另有一石，用杖一击，声如古琴，很是奇妙。
-                            </p>
-          </div>    
         </div>
-                
-        <!-- 周边介绍  End -->
+
+        <div class="tab-pane" id="related-desc">
+          <!-- 周边介绍  Start -->
+                  
+          <div class="tabContent" style="display:block;">
+                       <strong class="tabTitle db">上天竺水闻道佛缘套房&nbsp;&nbsp;&nbsp;&nbsp;周边环境</strong>
+             <div class="text">                      
+                  
+                  <img src="http://staticfile.tujia.com/upload/residentialquarter/day_120401/201204010234313084.gif" alt="周边介绍图"/>
+                                  
+                <p>
+                                  灵隐寺——车程0.72公里（白乐桥）<br />中国佛教著名寺院，又名云林寺，位于浙江省杭州市西湖西北面，在飞来峰与北高峰之间灵隐山麓中，两峰挟峙，林木耸秀，深山古寺，云烟万状，是一处古朴幽静、景色宜人的游览胜地，也是江南著名古刹之一。<p><br/></p>法喜寺——车程0.05公里（上天竺）<br />法喜寺即是以灵感观音名闻江南，以至历朝历届杭州知州必定参拜。距今已有1千多年历史，与法净寺、法镜寺合称天竺三寺。<p><br/></p>法净寺——车程1.6公里（上天竺）<br />法净寺距今已有1千多年历史，与法喜寺、法镜寺合称天竺三寺。<p><br/></p>水乐洞——车程0.63公里（上满觉陇）<br />烟霞三洞之一，位于南高峰下的烟霞岭上。路边桂树林立，中秋时分，金桂飘香，游人可在桂树旁品茗小坐，极具佳趣。水乐洞深60多米，洞口有清泉流出，声如金石，十分悦耳。两旁石壁上有“天然琴声”、“听无弦琴”等石刻，在洞内到处可听见水声，但见不到水，直至洞口才见清泉如注。洞底原有梁山伯、祝英台石像两座。另有一石，用杖一击，声如古琴，很是奇妙。
+                              </p>
+            </div>    
+          </div>
+                  
+          <!-- 周边介绍  End -->
+        </div>
+
       </div>
     </div>
-        </div>
+
         
+    <div id="comments" style="margin-top: 10px;">
+        <!-- 点评列表  Start -->
+      <div class="tabbable">
+        <ul class="nav nav-tabs">
+          <li class="active"><a href="#room-comments" data-toggle="tab">入住点评</a></li>
+        </ul>
+        <div class="tab-content">
+          <div class="tab-pane active" id="room-comments">
+              <% @room.comments.each do |comment| %>
+                  <div class="alert"><%= comment.comment %></div>
+                </div>
+              <% end %>
 
-        <div id="loading" class="dn"><img src='http://staticfile.tujia.com/Common/images/loader.gif'/>正在加载点评数据，请稍侯......</div>
-        <a name="comment" id="comment" href="#comment"></a>
+              <%= simple_form_for @comment, :html => { :class => 'form-horizontal' } do |f| %>
+                <%= f.input :commentable_id, :as => :hidden, :value => @room.id %>
+                <%= f.input :commentable_type, :as => :hidden, :value => 'Room' %> 
+                <%= f.input :title %>
+                <%= f.input :comment, :as => :text, :input_html => { :rows => 6} %>
+                
+                <div class="form-actions">
+                  <%= f.button :submit, :class => 'btn-primary' %>
+                </div>
+              <% end %>
+          </div>
+          </div>
 
-    <div id="commentPanel">
-        <form action="/UnitDetail/Log/" data-ajax="true" data-ajax-method="Post" id="logForm" method="post"><input id="unitId" name="unitId" type="hidden" value="399" />
-            </form>
-
-        <%= render 'comments' %>
-    </div>
+      </div>
+      <!-- 点评列表  End -->
+      </div>
   </div>
 </div>
 

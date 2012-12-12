@@ -1,5 +1,9 @@
 CanaryWeb::Application.routes.draw do
   
+  get "comments/create"
+
+  get "comment/create"
+
   resources :orders do
     member do
       match 'pay'
@@ -12,6 +16,8 @@ CanaryWeb::Application.routes.draw do
   resources :rooms do
     resources :orders
   end
+
+  resources :comments
 
   resources :banners do
     member do
