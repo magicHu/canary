@@ -1,26 +1,21 @@
-<!-- sidebar  Start -->
-<div class="span3">
-      <span class="sidebarTop"></span>
-      <div class="PriceRange pt5">
-             <div id="priceRangeDescWrap" class="dn">价格：</div>
-             <div id="priceRangeWrap" class="c9"></div>
-          </div>
-      <form action="/order/info/" id="houseFrom" method="get" target="_blank"><input id="unitId" name="unitId" type="hidden" value="399" />
-        <div class="formBox">
-          <div class="ovh"><label for="startDate" class="pr"><span class="fl">入住日期</span><input class="fr pl10 f12 ft c6 ovh" id="startDate" name="startDate" type="text" value="" /><b class="datewatermark datewatermark_detail">yyyy-mm-dd</b></label></div>
-          <div class="ovh"><label for="endDate" class="pr"><span class="fl">退房日期</span><input class="fr pl10 f12 ft c6 ovh" id="endDate" name="endDate" type="text" value="" /><b class="datewatermark datewatermark_detail">yyyy-mm-dd</b></label></div>
-        </div>
-        <dl class="sum" id="houseDesc"></dl>
-              <div id="totalPriceWrap" class="total dn"><img src="http://staticfile.tujia.com/portalsite2/images/attention.gif">&nbsp;<span></span></div>
-        <div class="submitBox ovh">
-          <input type="submit" value="立即预订" title="立即预订" class="submitDisabled" id="postInfo" />
-        </div>
-              <div class="db pt5 pl30 c963">成功预订后途家将捐赠一笔善款到<br />中国儿童少年基金会“孤儿保障大行动”</div>
-              </form>
-              <div class="sidebarBottom_02"></div>
-              
-             
-         
-      </div>
+<div id="sidebar" style="position: fixed;">
+
+  <span class="sidebarTop"></span>
+  <div class="PriceRange pt5">
+       <div id="priceRangeDescWrap" class="dn" style="display: block; ">价格</div>
+       <div id="priceRangeWrap" class="c9"><em class="yen">¥</em><span class="Price pl5 pr5">368-1658</span>每晚</div>
+    </div>
+
+  <%= simple_form_for [@room, @order], :html => { :class => 'form-horizontal' } do |f| %>
+
+    <%= f.input :room_num, :input_html => { :class => 'input-small' } %>
+    <%= f.input :checkin, :as => :string, :input_html => { :class => 'datepicker input-small' } %>
+    <%= f.input :checkout, :as => :string, :input_html => { :class => 'datepicker input-small' } %>
+
+    <div class="form-actions">
+      <%= f.button :submit, :class => 'btn submit' %>
+    </div>
+  <% end %>
+  
+   
 </div>
-<!-- sidebar  End -->

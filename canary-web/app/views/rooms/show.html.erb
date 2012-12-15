@@ -18,22 +18,17 @@
 </div>
 <!-- head  End -->
 
-
-
-    
 <!-- dir Start -->
-<div class="container_24">
-  <div class="grid_24"  id="dir">
-    <span>房屋编号：<strong>399</strong></span>
-    <a href="http://www.tujia.com">国内站</a><em>&gt;</em>
-    <a href="/hangzhou_gongyu/">杭州</a><em>&gt;</em>
-    <a href="/hangzhou_gongyu/xihu_s13/">西湖</a><em>&gt;</em>房屋详情
-  </div>
+<div class="row"  id="dir">
+  <span>房屋编号：<strong>399</strong></span>
+  <a href="http://www.tujia.com">国内站</a><em>&gt;</em>
+  <a href="/hangzhou_gongyu/">杭州</a><em>&gt;</em>
+  <a href="/hangzhou_gongyu/xihu_s13/">西湖</a><em>&gt;</em>房屋详情
 </div>
 <!-- dir  End -->
 
-<div class="container_24" id="detail_wrapper">
-  <div class="grid_17 c3" id="main">
+<div class="row">
+   <div class="span9">
 
     <!-- title  Start -->
     <div class="info pt10 pr">
@@ -43,7 +38,7 @@
       </div>
 
       <p class="c9">
-        地址：@room.address
+        地址：<%= @room.address %>
         <a href="javascript:void(0)" class="switchToMap dib mr20">[位置地图]</a>
         <br />
 
@@ -56,7 +51,6 @@
     </div>
     <!-- title  End -->
         
-    <div >
     <!-- tab  Start -->
     <div class="tabbable">
       <ul class="nav nav-tabs">
@@ -424,37 +418,9 @@
       </div>
     </div>
 
-        
-    <div id="comments" style="margin-top: 10px;">
-        <!-- 点评列表  Start -->
-      <div class="tabbable">
-        <ul class="nav nav-tabs">
-          <li class="active"><a href="#room-comments" data-toggle="tab">入住点评</a></li>
-        </ul>
-        <div class="tab-content">
-          <div class="tab-pane active" id="room-comments">
-              <% @room.comments.each do |comment| %>
-                  <div class="alert"><%= comment.comment %></div>
-                </div>
-              <% end %>
+  </div>
 
-              <%= simple_form_for @comment, :html => { :class => 'form-horizontal' } do |f| %>
-                <%= f.input :commentable_id, :as => :hidden, :value => @room.id %>
-                <%= f.input :commentable_type, :as => :hidden, :value => 'Room' %> 
-                <%= f.input :title %>
-                <%= f.input :comment, :as => :text, :input_html => { :rows => 6} %>
-                
-                <div class="form-actions">
-                  <%= f.button :submit, :class => 'btn-primary' %>
-                </div>
-              <% end %>
-          </div>
-          </div>
-
-      </div>
-      <!-- 点评列表  End -->
-      </div>
+  <div class="span3">
+    <%= render 'order' %>
   </div>
 </div>
-
-<% render 'order' %>
