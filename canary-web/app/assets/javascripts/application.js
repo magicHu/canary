@@ -15,3 +15,5 @@
 //= require twitter/bootstrap
 //= require_tree .
 //= require jquery_nested_form
+//= require bootstrap-datepicker/core
+//= require bootstrap-datepicker/locales/bootstrap-datepicker.zh-CN

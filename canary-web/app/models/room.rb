@@ -14,5 +14,5 @@ class Room < ActiveRecord::Base
 
   # comment
   acts_as_commentable
-  
+    
 end

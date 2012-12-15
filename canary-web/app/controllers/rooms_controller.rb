@@ -15,7 +15,7 @@ class RoomsController < ApplicationController
   def show
     @room = Room.find(params[:id])
     @order = @room.orders.build
-    @comment = @room.comments.build
+    @comment = Comment.new
 
     respond_to do |format|
       format.html # show.html.erb
