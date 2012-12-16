@@ -1,14 +1,12 @@
 class OrdersController < ApplicationController
+
+  before_filter :authenticate_user!
+
   # GET /orders
   # GET /orders.json
   def index
-    if current_user
-      @orders = Order.where(user_id: current_user.id)
-      @orders_unpay = Order.where(user_id: current_user.id, status: "unpay")
-    else
-      @orders = Order.where(user_id: nil)
-      @orders_unpay = Order.where(user_id: nil, status: "unpay")
-    end
+    @orders = Order.where(user_id: current_user.id)
+    @orders_unpay = Order.where(user_id: current_user.id, status: "unpay")
 
     respond_to do |format|
       format.html # index.html.erb

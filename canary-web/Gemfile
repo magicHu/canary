@@ -18,7 +18,8 @@ gem 'nested_form'
 
 # 注册/登录
 gem "devise", "~> 2.1.2"
-#gem 'omniauth'
+gem 'omniauth'
+gem 'omniauth-github'
 
 # Authorization
 gem 'cancan', "~> 1.6.8"

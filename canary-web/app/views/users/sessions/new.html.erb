@@ -3,21 +3,18 @@
 		<legend>登录</legend>
 		
 		  <%= f.input :login, :placeholder => "邮箱或手机号码" %>
-		  
 		  <%= f.input :password %>
 		
 		  <% if devise_mapping.rememberable? -%>
-		  		<div class="controls">
-		  				<label class="checkbox">
-				    		<%= f.check_box :remember_me %>
-				    		<%= f.label :remember_me, '记住我' %>
-		    			</label>
-		    </div>
+    		<%= f.check_box :remember_me %>
+    		<%= f.label :remember_me, '记住我' %>
 		  <% end -%>
 		
+		<div class="form-actions">
 			<%= f.button :submit, "登录" %>
+			<%= link_to "Sign in with Github", user_omniauth_authorize_path(:github) %>
 			<%= render "devise/shared/links" %>
-
+		</div>
 	</fieldset>
 <% end %>
 

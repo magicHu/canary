@@ -9,11 +9,13 @@
   <%= simple_form_for [@room, @order], :html => { :class => 'form-horizontal' } do |f| %>
 
     <%= f.input :room_num, :input_html => { :class => 'input-small' } %>
-    <%= f.input :checkin, :as => :string, :input_html => { :class => 'datepicker input-small' } %>
-    <%= f.input :checkout, :as => :string, :input_html => { :class => 'datepicker input-small' } %>
+    <%= f.input :order_name, :input_html => { :class => 'input-small' } %>
+    <%= f.input :order_phone, :as => :tel, :input_html => { :class => 'input-small' } %>
+    <%= f.input :checkin, :as => :string, :input_html => { :class => 'datepicker input-small', 'data-date-format' => "yyyy-mm-dd" } %>
+    <%= f.input :checkout, :as => :string, :input_html => { :class => 'datepicker input-small', 'data-date-format' => "yyyy-mm-dd" } %>
 
     <div class="form-actions">
-      <%= f.button :submit, :class => 'btn submit' %>
+      <%= f.button :submit %>
     </div>
   <% end %>
   
