@@ -12,7 +12,8 @@
 		
 		<div class="form-actions">
 			<%= f.button :submit, "登录" %>
-			<%= link_to "Sign in with Github", user_omniauth_authorize_path(:github) %>
+			<%= link_to image_tag('github.jpg', :title => 'Sign in with Github'), user_omniauth_authorize_path(:github) %>
+			<br />
 			<%= render "devise/shared/links" %>
 		</div>
 	</fieldset>

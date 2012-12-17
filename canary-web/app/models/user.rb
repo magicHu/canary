@@ -8,11 +8,11 @@ class User < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :login, :email, :phone, :password, :password_confirmation, :remember_me
-  # attr_accessible :title, :body
 
   # Virtual attribute for authenticating by either phone or email
   attr_accessor :login
-  validates :phone, presence: true, length: { is: 11 }
+  validates :email, presence: true
+  #validates :phone, presence: true, length: { is: 11 }
 
   # many-to-many roles
   has_and_belongs_to_many :roles
@@ -35,5 +35,34 @@ class User < ActiveRecord::Base
       end
     end
     
+    def find_for_auth(auth, signed_in_resource=nil)
+      authentication = Authentication.where(:provider => auth.provider, :uid => auth.uid).first
+      user = authentication.user if authentication
+      unless user
+        user ||= User.find_by_email(auth.info.email)
+
+        unless user
+          user = User.new(email:auth.info.email,
+                              password:Devise.friendly_token[0,20])
+        end
+
+        # link authentication to user
+        unless authentication
+          user.authentications.build(:provider => auth.provider, :uid => auth.uid)
+        end
+        user.save
+      end
+      user
+    end
+
+    # Devise RegistrationsController by default calls "User.new_with_session" before building a resource
+    def self.new_with_session(params, session)
+      super.tap do |user|
+        if auth = session["devise.auth"]
+          user.email = auth.info.email if user.email.blank?
+          user.authentications.build(:provider => auth.provider, :uid => auth.uid)
+        end
+      end
+    end
   end
 end

@@ -1,5 +1,7 @@
 CanaryWeb::Application.routes.draw do
   
+  get "omniauth_callbacks/github"
+
   get "comments/create"
 
   get "comment/create"
@@ -28,7 +30,7 @@ CanaryWeb::Application.routes.draw do
     end
   end
   
-  devise_for :users
+  devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
 
   get "home/index"
 
