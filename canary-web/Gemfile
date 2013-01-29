@@ -87,6 +87,8 @@ group :development do
   # better error page for rails
   gem "better_errors"
   gem "binding_of_caller"
+  # rails_panel
+  gem "meta_request", ">= 0.2.1"
 end
 
 group :development, :test do
