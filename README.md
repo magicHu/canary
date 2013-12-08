@@ -12,3 +12,7 @@ LYJ, HRH, DZC, XMM
 * 数据库：MySQL
 * 终端：iOS/Android APP
 
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/magicHu/canary/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
